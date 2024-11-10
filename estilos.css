@@ -6,6 +6,61 @@
 
 }
 
+/*NAVBAR*/
+
+.seccionNavBarPage {
+    background-color: #fff;
+    transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);
+    height: 144px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.seccionNavBarPage-contenido {
+    display: flex;
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.seccionNavBarPage-contenido-Logo {
+    width: auto;
+    height: auto;
+}
+
+.seccionNavBarPage-contenido-Boxes.contenido1 {
+    max-width: 325px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 15px 15px 0;
+    margin-bottom: 22px;
+    z-index: 1;
+    transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+
+.seccionNavBarPage-contenido-Boxes.contenido1::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 122px;
+    background: red;
+    transform: skewX(16deg);
+    transform-origin: 50% 100%;
+    will-change: transform;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+
 /*BANNER PRINCIPAL*/
 
 .seccionBannerPrincipal {
