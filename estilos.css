@@ -7,9 +7,141 @@
 }
 
 
+/*BANNER PRINCIPAL*/
+
+.seccionBannerPrincipal {
+    position: relative;
+    height: 500px;
+}
+
+.seccionBannerPrincipal-contenido {
+    max-width: 500px;
+    margin: 0 auto;
+    right: 17em;
+    top: 3em;
+    position: relative;
+}
+
+
+.seccionBannerPrincipal-itemPictures {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.seccionBannerPrincipal-Imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right top;
+}
 
 
 
+.seccionBannerPrincipal-contenido-Textos {
+    color: #FFF;
+    font-size: 79px;
+}
+
+.seccionBannerPrincipal-contenido-descripcion {
+    color: #FFF;
+    font-size: 20px;
+    width: 400px;
+    line-height: 26px;
+    margin-top: 12px;
+    margin-bottom: 1em;
+}
+
+.seccionBannerPrincipal-botonbanner {
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #151515;
+    background-color: #ffe745;
+    border-color: #ffe745;
+    height: 80px;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all .25s ease-in-out;
+}
+
+
+.seccionBannerPrincipal-botonbanner:hover {
+    background-color: #73cca1;
+    color: #ffffff;
+}
+
+@media(max-width:600px) {
+    .seccionBannerPrincipal-contenido {
+        max-width: 100%;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 6em;
+    }
+
+    .seccionBannerPrincipal-contenido-Textos {
+        text-align: center;
+        width: 300px;
+        margin: 0 auto;
+        font-size: 50px;
+    }
+
+    .seccionBannerPrincipal-contenido-descripcion {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 12px;
+        margin-bottom: 1em;
+    }
+
+    .seccionBannerPrincipal-botonbanner {
+        width: 219px;
+        height: 64px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 770px) {
+    .seccionBannerPrincipal-contenido {
+        right: 1em;
+        top: 5em;
+    }
+
+    .seccionBannerPrincipal-contenido-Textos {
+
+        font-size: 50px;
+    }
+
+    .seccionBannerPrincipal-contenido-descripcion {
+
+        margin-top: 12px;
+        margin-bottom: 1em;
+    }
+
+    .seccionBannerPrincipal-botonbanner {
+        width: 219px;
+        height: 64px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 1270px) {
+    .seccionBannerPrincipal-contenido {
+        right: 7em;
+    }
+}
 
 /*SERVICIOS CARDS*/
 
