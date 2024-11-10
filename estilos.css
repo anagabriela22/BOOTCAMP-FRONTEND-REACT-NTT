@@ -161,6 +161,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
     margin-top: 3em;
     gap: 34px;
 }
@@ -177,7 +178,7 @@
     transform: scale(1.05) translateZ(0);
 }
 
-@media(max-width:600px) {
+@media(max-width:799px) {
     .seccionProductos-titulo {
         font-size: 43px;
     }
@@ -185,6 +186,21 @@
     .seccionProductos {
         margin: 42px auto;
         margin-bottom: 7em;
+    }
+
+    .seccionProductos-cards-Boxes {
+        width: 255px;
+        height: 330px;
+    }
+
+    .seccionProductos-cards {
+        gap: 25px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1270px) {
+    .seccionProductos-cards {
+        width: 800px;
     }
 }
 
@@ -478,7 +494,7 @@
     }
 }
 
-@media(max-width:790px) {
+@media(max-width:799px) {
     .seccionFooter-boxes {
         flex-wrap: wrap;
     }
