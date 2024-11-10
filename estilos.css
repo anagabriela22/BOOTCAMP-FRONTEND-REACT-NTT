@@ -6,7 +6,6 @@
 
 }
 
-
 /*BANNER PRINCIPAL*/
 
 .seccionBannerPrincipal {
@@ -142,6 +141,53 @@
         right: 7em;
     }
 }
+
+
+/*PRODUCTOS*/
+
+.seccionProductos {
+    text-align: center;
+    margin: 60px auto;
+    margin-bottom: 7em;
+}
+
+.seccionProductos-titulo {
+    font-size: 50px;
+    font-family: 'Roboto';
+}
+
+.seccionProductos-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+    gap: 34px;
+}
+
+.seccionProductos-cards-Boxes {
+    width: 280px;
+    height: 350px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: transform .2s, box-shadow .3s;
+}
+
+.seccionProductos-cards-Boxes:hover {
+    border: 1px solid #e1e1e1;
+    transform: scale(1.05) translateZ(0);
+}
+
+@media(max-width:600px) {
+    .seccionProductos-titulo {
+        font-size: 43px;
+    }
+
+    .seccionProductos {
+        margin: 42px auto;
+        margin-bottom: 7em;
+    }
+}
+
 
 /*SERVICIOS CARDS*/
 
