@@ -916,3 +916,42 @@
         padding: 9px 14px;
     }
 }
+
+
+
+
+.seccionAnclaBoton {
+    position: fixed;
+    overflow: hidden;
+    right: 15px;
+    bottom: 15px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    color: #151515;
+    background: #ffe745;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: .3s all ease-in-out;
+    transform: translate3d(0, 100px, 0);
+}
+
+.seccionAnclaBoton::before {
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.seccionAnclaBoton:hover {
+    color: #FFF;
+    background-color: #73cca1;
+}
+
+@media (min-width: 576px) {
+    .seccionAnclaBoton {
+        right: 40px;
+        bottom: 40px;
+    }
+}
