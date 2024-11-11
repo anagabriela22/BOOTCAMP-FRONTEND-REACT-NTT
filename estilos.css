@@ -39,7 +39,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 90px;
 }
 
 .seccionNavBarPage-navbar-telefonos {
@@ -139,6 +138,11 @@
     color: #FFF;
 }
 
+.seccionNavBarPage-navbar-redes-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 @media(max-width:799px) {
     .seccionNavBarPage {
@@ -159,9 +163,7 @@
         padding: 0px 10px;
     }
 
-    .seccionNavBarPage-navbar-redes-2 {
-        gap: 15px;
-    }
+
 
     .seccionNavBarPage-contenido-NavBarside2 {
         gap: 15px;
@@ -200,7 +202,33 @@
 }
 
 
+@media (min-width: 800px) and (max-width: 1270px) {
 
+    .seccionNavBarPage-navbar-inputBoton {
+        width: 480px;
+    }
+
+    .seccionNavBarPage-navbar-redes-logincompra {
+        gap: 25px;
+    }
+
+    .seccionNavBarPage {
+        height: 75px;
+    }
+
+    .seccionNavBarPage-contenido-Logo {
+        width: 138px;
+        height: 40px;
+    }
+
+    .seccionNavBarPage-contenido-NavBarside2 {
+        gap: 25px;
+    }
+
+    .seccionNavBarPage-boxes.box1 {
+        display: none;
+    }
+}
 
 
 
