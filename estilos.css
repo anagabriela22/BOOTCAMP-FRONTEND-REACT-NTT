@@ -6,66 +6,38 @@
 
 }
 
+
+
 /*NAVBAR*/
 
 .seccionNavBarPage {
-    background-color: #f5f5f5;
-    transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);
-    height: 144px;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.seccionNavBarPage-contenido {
-    display: flex;
-    max-width: 1170px;
-    margin: 0 auto;
+    height: 150px;
     position: relative;
 }
 
-.seccionNavBarPage-contenido-Logo {
-    width: auto;
-    height: auto;
+.seccionNavBarPage-contenido-NavBarside1 {
+    display: flex;
 }
 
-.seccionNavBarPage-contenido-Boxes.contenido1 {
-    max-width: 325px;
-    position: relative;
+.seccionNavBarPage-navbar-contactos-1 {
     display: flex;
+}
+
+
+.seccionNavBarPage-contenido-NavBarside2 {
+    display: flex;
+}
+
+.seccionNavBarPage-navbar-redes-2 {
+    display: flex;
+}
+
+.seccionNavBarPage-boxes {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 25px 15px 15px 0;
-    margin-bottom: 22px;
-    z-index: 1;
-    transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);
+    height: 75px;
 }
-
-
-.seccionNavBarPage-contenido-Boxes.contenido1::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 122px;
-    background: #ffffff;
-    transform: skewX(16deg);
-    transform-origin: 50% 100%;
-    will-change: transform;
-    pointer-events: none;
-    z-index: -1;
-}
-
-@media(max-width:600px) {
-    .seccionNavBarPage-contenido-Logo {
-        width: 138px;
-        height: auto;
-    }
-}
-
-
 
 /*BANNER PRINCIPAL*/
 
