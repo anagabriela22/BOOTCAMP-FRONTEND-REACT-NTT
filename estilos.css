@@ -228,19 +228,20 @@
     .seccionNavBarPage-boxes.box1 {
         display: none;
     }
+
+    .seccionNavBarPage {
+        height: auto;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 1070;
+    }
+
+    .seccionBannerPrincipal {
+        margin-top: 75px;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -955,6 +956,3 @@
         bottom: 40px;
     }
 }
-
-
-/*PRUEBA*/ 
