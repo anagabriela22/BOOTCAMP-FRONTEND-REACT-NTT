@@ -189,19 +189,19 @@
     }
 
     .seccionNavBarPage-navbar-icon-login {
-        font-size: 30px !important;
+        font-size: 25px !important;
     }
 
     .seccionNavBarPage-navbar-icon-carrito {
-        font-size: 25px !important;
+        font-size: 28px !important;
     }
 
     .seccionNavBarPage-navbar-icon-search {
         width: 30px;
         height: 30px;
-        right: 8px;
-        top: 8px;
-        font-size: 25px !important;
+        right: 3px;
+        top: 13px;
+        font-size: 18px !important;
     }
 
 }
