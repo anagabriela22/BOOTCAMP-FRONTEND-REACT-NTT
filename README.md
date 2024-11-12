@@ -12,10 +12,13 @@ Finalmente, cuenta con un botón de anclaje que permite al usuario irse hasta la
 
 # Descripción de la Arquitectura De Carpetas
 
-1- Carpeta de imágenes: contiene todas las imágenes que se utilizarán en la página web.
-2- contenido.html: archivo que define la estructura de la página.
-3- estilos.css: archivo que contiene los estilos y animaciones implementados en la página.
+- Carpeta de imágenes: contiene todas las imágenes que se utilizarán en la página web.
+- contenido.html: archivo que define la estructura de la página.
+- estilos.css: archivo que contiene los estilos y animaciones implementados en la página.
 
 # Tips Abrir localmente el proyecto
 
-
+- Crea una nueva carpeta para alojar el proyecto que deseas clonar.
+- Abre Git Bash y clona el repositorio usando el siguiente comando: git clone <URL_del_repositorio>.
+- Luego, usa el comando "code ." para abrir el proyecto en Visual Studio Code.
+-La página web estará lista para visualizarse utilizando la extensión Go Live de Visual Studio Code (como una recomendación).
