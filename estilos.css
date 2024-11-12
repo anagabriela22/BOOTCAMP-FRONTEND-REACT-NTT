@@ -81,11 +81,11 @@
 .seccionNavBarPage-navbar-icon-search {
     position: absolute;
     z-index: 2;
-    width: 30px;
-    height: 30px;
-    right: 12px;
-    top: 7px;
-    font-size: 30px !important;
+    width: auto;
+    height: auto;
+    right: 18px;
+    top: 13px;
+    font-size: 18px !important;
 }
 
 .seccionNavBarPage-navbar-redes-logincompra {
@@ -97,7 +97,7 @@
 }
 
 .seccionNavBarPage-navbar-icon-login {
-    font-size: 40px !important;
+    font-size: 32px !important;
 }
 
 .seccionNavBarPage-navbar-icon-carrito {
@@ -124,12 +124,13 @@
     width: 29px;
     height: 29px;
     line-height: 29px !important;
-    font-size: 17px !important;
+    font-size: 16px !important;
     text-decoration: none;
     background: #ebebeb;
     display: flex !important;
     align-items: center;
     justify-content: center;
+    transition: all .25s ease-in-out;
     color: #151515;
 }
 
@@ -142,6 +143,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.seccionNavBarPage-navbar-icon {
+    font-size: 17px;
 }
 
 @media(max-width:799px) {
@@ -532,7 +537,7 @@
     pointer-events: none;
 }
 
-.seccionSR-iconmega.icon-iconlinear:hover {
+.seccionSR-iconmega.lnr:hover {
     color: #73cca1;
 }
 
@@ -708,7 +713,7 @@
     color: #ffffff;
     background: rgba(255, 255, 255, 0.1);
     padding: 8px 0px;
-    font-size: 20px !important;
+    font-size: 16px !important;
     text-decoration: none;
 }
 
@@ -937,7 +942,6 @@
     text-decoration: none;
     border-radius: 50%;
     transition: .3s all ease-in-out;
-    transform: translate3d(0, 100px, 0);
 }
 
 .seccionAnclaBoton::before {
