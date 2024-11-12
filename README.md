@@ -21,4 +21,4 @@ Finalmente, cuenta con un botón de anclaje que permite al usuario irse hasta la
 - Crea una nueva carpeta para alojar el proyecto que deseas clonar.
 - Abre Git Bash y clona el repositorio usando el siguiente comando: git clone <URL_del_repositorio>.
 - Luego, usa el comando "code ." para abrir el proyecto en Visual Studio Code.
--La página web estará lista para visualizarse utilizando la extensión Go Live de Visual Studio Code (como una recomendación).
+- La página web estará lista para visualizarse utilizando la extensión Go Live de Visual Studio Code (como una recomendación).
