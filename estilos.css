@@ -1,3 +1,15 @@
+:root {
+    --color-primario: #151515;
+    --color-secundario: #ffffff;
+    --color-fondo: #ffe745;
+    --color-hover: #73cca1;
+    --color-fondo-footer: #38393b;
+    --color-terciario: #f5f5f5;
+    --color-servicios: #6046b6;
+    --color-fondos-textos-iconos: #4c4d4f;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +17,6 @@
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 
 }
-
-
 
 /*NAVBAR*/
 
@@ -47,7 +57,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #FFF;
+    color: var(--color-secundario);
 }
 
 .seccionNavBarPage-navbar-iphone {
@@ -55,7 +65,7 @@
     letter-spacing: .075em;
     font-weight: 500;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-secundario);
     font-size: 16px;
 }
 
@@ -71,7 +81,7 @@
 }
 
 .seccionNavBarPage-boxes.box2 {
-    background: #f5f5f5;
+    background: var(--color-terciario);
 }
 
 .seccionNavBarPage-navbar-redes-Buscador {
@@ -131,12 +141,12 @@
     align-items: center;
     justify-content: center;
     transition: all .25s ease-in-out;
-    color: #151515;
+    color: var(--color-primario);
 }
 
 .seccionNavBarPage-navbar-icon-redes:hover {
-    background-color: #73cca1;
-    color: #FFF;
+    background-color: var(--color-hover);
+    color: var(--color-secundario);
 }
 
 .seccionNavBarPage-navbar-redes-3 {
@@ -286,12 +296,12 @@
 
 
 .seccionBannerPrincipal-contenido-Textos {
-    color: #FFF;
+    color: var(--color-secundario);
     font-size: 79px;
 }
 
 .seccionBannerPrincipal-contenido-descripcion {
-    color: #FFF;
+    color: var(--color-secundario);
     font-size: 20px;
     width: 400px;
     line-height: 26px;
@@ -304,9 +314,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #151515;
-    background-color: #ffe745;
-    border-color: #ffe745;
+    color: var(--color-primario);
+    background-color: var(--color-fondo);
+    border-color: var(--color-fondo);
     height: 80px;
     text-decoration: none;
     font-weight: 900;
@@ -319,8 +329,8 @@
 
 
 .seccionBannerPrincipal-botonbanner:hover {
-    background-color: #73cca1;
-    color: #ffffff;
+    background-color: var(--color-hover);
+    color: var(--color-secundario);
 }
 
 @media(max-width:600px) {
@@ -468,7 +478,7 @@
 .seccionSR-Cajas {
     position: relative;
     padding: 50px 15px;
-    background: #ffffff;
+    background: var(--color-secundario);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.03);
     z-index: 1;
     width: 270px;
@@ -503,7 +513,7 @@
     min-height: 55px;
     font-size: 48px;
     line-height: 55px;
-    color: #6046b6;
+    color: var(--color-servicios);
     transition: color 0.3s ease;
 }
 
@@ -517,7 +527,7 @@
     left: 50%;
     border-width: 0 4px 0 4px;
     border-style: solid;
-    border-color: #f5f5f5;
+    border-color: var(--color-terciario);
     transform: translate3d(-50%, -50%, 0);
     pointer-events: none;
 }
@@ -532,13 +542,13 @@
     left: 50%;
     border-width: 0 4px 0 4px;
     border-style: solid;
-    border-color: #f5f5f5;
+    border-color: var(--color-terciario);
     transform: translate3d(-50%, -50%, 0);
     pointer-events: none;
 }
 
 .seccionSR-iconmega.lnr:hover {
-    color: #73cca1;
+    color: var(--color-hover);
 }
 
 
@@ -565,8 +575,8 @@
 
 .seccionFooter {
     margin: 0 auto;
-    background: #38393b;
-    color: #ffffff;
+    background: var(--color-fondo-footer);
+    color: var(--color-secundario);
 }
 
 .seccionFooter-boxes {
@@ -631,17 +641,17 @@
     font-weight: 400;
     line-height: 26px;
     height: 60px;
-    border-color: #ffffff;
+    border-color: var(--color-secundario);
     background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    color: var(--color-secundario);
 }
 
 .seccionFooter-Suscribete {
     width: 146px;
     height: 60px;
-    color: #151515;
-    background-color: #ffe745;
-    border-color: #ffe745;
+    color: var(--color-primario);
+    background-color: var(--color-fondo);
+    border-color: var(--color-fondo);
     cursor: pointer;
     border: none;
     font-weight: 900;
@@ -654,8 +664,8 @@
 }
 
 .seccionFooter-Suscribete:hover {
-    background-color: #73cca1;
-    color: #ffffff;
+    background-color: var(--color-hover);
+    color: var(--color-secundario);
 }
 
 .seccionFooter-direccion {
@@ -672,7 +682,7 @@
 
 .seccionFooter-boxes.boxes2 {
     padding: 50px 0px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--color-fondos-textos-iconos);
     column-gap: 9em;
     justify-content: center;
 }
@@ -680,7 +690,7 @@
 .seccionFooter-boxes.boxes3 {
     padding: 40px 0px;
     column-gap: 29em;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--color-fondos-textos-iconos);
 }
 
 .seccionFooter-porcentaje {
@@ -688,7 +698,7 @@
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    color: #ffffff;
+    color: var(--color-secundario);
     column-gap: 8px;
 }
 
@@ -710,8 +720,8 @@
     text-align: center;
     width: 35px;
     height: 35px;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-secundario);
+    background: var(--color-fondos-textos-iconos);
     padding: 8px 0px;
     font-size: 16px !important;
     text-decoration: none;
@@ -719,12 +729,12 @@
 
 .seccionFooter-informaciones-textos {
     font-size: 18px;
-    color: #FFF;
+    color: var(--color-secundario);
     text-decoration: none;
 }
 
 .seccionFooter-informaciones-icon.icon1:hover {
-    background-color: #6046b6;
+    background-color: var(--color-servicios);
     transition: all .25s ease-in-out;
 }
 
@@ -936,8 +946,8 @@
     height: 60px;
     font-size: 30px;
     line-height: 60px;
-    color: #151515;
-    background: #ffe745;
+    color: var(--color-primario);
+    background: var(--color-fondo);
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
@@ -950,8 +960,8 @@
 }
 
 .seccionAnclaBoton:hover {
-    color: #FFF;
-    background-color: #73cca1;
+    color: var(--color-secundario);
+    background-color: var(--color-hover);
 }
 
 @media (min-width: 576px) {
