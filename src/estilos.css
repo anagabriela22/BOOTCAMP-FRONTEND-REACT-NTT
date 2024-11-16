@@ -972,3 +972,57 @@
         bottom: 40px;
     }
 }
+
+
+
+
+
+
+.seccionAnclaBoton {
+    transform: translate3d(0, 100px, 0); /*Agregar este estilo adicional de la clase .seccionAnclaBoton */
+}
+
+/*Agregar todo esta clase nueva adicional*/
+.seccionAnclaBoton.active {
+    transform: translate3d(0, 0, 0);
+}
+
+
+.seccionNavBarPage {
+    transition: transform 0.6s ease; /*Agregar este estilo adicional de la clase .seccionNavBarPage */
+}
+
+
+/*Agregar todo esto que son clases nuevas adicionales*/
+.seccionNavBarPage.active {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1070;
+    height: 75px;
+    animation: bounce 0.6s ease-out;
+}
+
+/* Definición de la animación de rebote */
+@keyframes bounce {
+    0% {
+        transform: translateY(-6px);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.seccionNavBarPage__box--first.active--none {
+    display: none;
+}
