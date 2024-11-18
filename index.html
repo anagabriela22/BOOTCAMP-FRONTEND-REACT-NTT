@@ -95,7 +95,10 @@
       </div>
 
       <div class="seccionNavBarPage__boxes seccionNavBarPage__box--second">
-        <div class="seccionNavBarPage__contenido-NavBarside--second">
+        <div
+          id="buscador-pc-container"
+          class="seccionNavBarPage__contenido-NavBarside--second"
+        >
           <div class="seccionNavBarPage__navbar-redes--first">
             <img
               class="seccionNavBarPage__contenido--Logo"
@@ -105,10 +108,13 @@
               height="67"
             />
           </div>
-
-          <div class="seccionNavBarPage__navbar-redes--second">
+          <div id="buscador" class="seccionNavBarPage__navbar-redes--second">
+            <select id="categorias" class="seccionNavBarPage__categorias">
+              <option selected value="all">Todas las categorias</option>
+            </select>
             <div class="seccionNavBarPage__navbar-redes--Buscador">
               <input
+                id="caja-busqueda"
                 class="seccionNavBarPage__navbar--inputBoton"
                 type="text"
                 placeholder="Buscar..."
@@ -118,7 +124,6 @@
               ></span>
             </div>
           </div>
-
           <div class="seccionNavBarPage__navbar-redes--third">
             <div class="seccionNavBarPage__navbar-redes--logincompra">
               <span
@@ -126,11 +131,17 @@
               ></span>
               <span
                 class="seccionNavBarPage__navbar-icon--carrito lnr lnr-cart"
-              ></span>
+              >
+                <span
+                  id="contador-carrito"
+                  class="seccionNavBarPage__navbar-icon--carrito-numero"
+                ></span>
+              </span>
             </div>
           </div>
         </div>
       </div>
+      <div id="buscador-mobil-container" class=""></div>
     </div>
 
     <div class="seccionBannerPrincipal">
@@ -168,20 +179,7 @@
     <div class="seccionProductos">
       <p class="seccionProductos__titulo">Productos Top</p>
 
-      <div class="seccionProductos__cards">
-        <div
-          class="seccionProductos__cards--Boxes seccionProductos__card--uno"
-        ></div>
-        <div
-          class="seccionProductos__cards--Boxes seccionProductos__card--dos"
-        ></div>
-        <div
-          class="seccionProductos__cards--Boxes seccionProductos__card--tres"
-        ></div>
-        <div
-          class="seccionProductos__cards--Boxes seccionProductos__card--cuatro"
-        ></div>
-      </div>
+      <div id="productos" class="seccionProductos__cards"></div>
     </div>
 
     <div class="seccionSR__servicios">
