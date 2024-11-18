@@ -1,24 +1,46 @@
-# Descripción de la Implemantación
-Es una página de tienda virtual o minimarket en la que, en esta primera entrega, se diseñó y estructuró utilizando solo HTML y CSS, incorporando también iconos y tipografías personalizadas. La página está organizada en varias secciones:
+# JavaScript Market App
 
-- Header: Encabezado de la página.
-- Banner: Espacio para promociones o la exhibición de productos destacados mediante imágenes.
-- Sección de productos: Aquí se muestrarán todos los productos disponibles para que el cliente pueda elegir, añadir al carrito y proceder con el pedido o compra.
-- Sección de servicios: Describe los servicios que ofrece nuestra tienda virtual.
-- Footer: Incluye la información de contacto, como número telefónico, dirección, redes sociales, entre otros detalles.
+## Descripción del proyecto (Rama `feature/javascript`)
 
-Finalmente, cuenta con un botón de anclaje que permite al usuario irse hasta la parte del navbar de la página de manera rapida con un solo clic.
+Este proyecto es una aplicación creada con Vanilla JavaScript y Vite. La funcionalidad principal incluye:
 
+- **Carga dinámica de productos** desde la API [DummyJSON](https://dummyjson.com/docs/products#products-all).
+- **Búsqueda en tiempo real**: Filtra productos mientras el usuario escribe.
+- **Filtro por categorías**: Muestra productos según la categoría seleccionada.
+- **Carrito dinamico**: Incrementa el contador en el menú superior al agregar productos.
+- **Diseño responsivo**: Adaptado a diferentes dispositivos (Mobil, Tablet y Pc).
 
-# Descripción de la Arquitectura De Carpetas
+La rama `feature/javascript` contiene estas implementaciones.
 
-- Carpeta de imágenes: contiene todas las imágenes que se utilizarán en la página web.
-- contenido.html: archivo que define la estructura de la página.
-- estilos.css: archivo que contiene los estilos y animaciones implementados en la página.
+## Instalación y ejecución local
 
-# Tips Abrir localmente el proyecto
+1. **Clona el repositorio**:
+   git clone <https://github.com/anagabriela22/BOOTCAMP-FRONTEND-REACT-NTT>
 
-- Crea una nueva carpeta para alojar el proyecto que deseas clonar.
-- Abre Git Bash y clona el repositorio usando el siguiente comando: git clone <URL_del_repositorio>.
-- Luego, usa el comando "code ." para abrir el proyecto en Visual Studio Code.
-- La página web estará lista para visualizarse utilizando la extensión Go Live de Visual Studio Code (como una recomendación).
+2. **Cambia a la rama correspondiente**:
+git checkout feature/javascript
+
+3. **Instala las dependencias**:
+npm install
+
+4. **Inicia el servidor de desarrollo**:
+npm run dev
+
+## Arquitectura de carpetas
+
+src/
+├── assets/
+│   └── estilos.css       # Estilos de la aplicación
+├── js/
+│   ├── FiltrarPorBusqueda.js      # Filtrado dinámico en la barra de búsqueda
+│   ├── FiltrarPorCategoria.js     # Filtrado por categorías
+│   ├── IncrementarContador.js     # Incrementa el contador del carrito
+│   ├── MostrarCategorias.js       # Carga dinámica de categorías
+│   ├── MostrarProductos.js        # Carga dinámica de productos
+│   ├── ResponseDesign.js          # Funciones de diseño responsivo
+│   └── ScrollSmooth.js            # Animaciones de scroll
+├── services/
+│   ├── Categorias.js              # Consumo de la API de categorías
+│   └── Productos.js               # Consumo de la API de productos
+├── index.html                     # Archivo principal HTML
+├── main.js                        # Punto de entrada de la aplicación
