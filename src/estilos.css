@@ -113,7 +113,8 @@
 .seccionNavBarPage__navbar-icon--carrito {
     font-size: 35px !important;
     position: relative;
-  }
+}
+
 .seccionNavBarPage__navbar--inputBoton {
     width: 600px;
     height: 45px;
@@ -419,19 +420,38 @@
     justify-content: center;
     margin: 0 auto;
     margin-top: 3em;
+    margin-bottom: 3em;
     gap: 34px;
 }
 
 .seccionProductos__cards--Boxes {
     width: 280px;
-    height: 430px;
+    height: auto;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     transition: transform .2s, box-shadow .3s;
+    padding: 0px 10px;
 }
 
 .seccionProductos__cards--Boxes:hover {
     border: 1px solid #e1e1e1;
     transform: scale(1.05) translateZ(0);
+}
+
+.seccionProductos__cards--Boxes img {
+    width: 100%;
+    height: auto;
+    margin: 8px auto;
+    margin-bottom: 15px;
+}
+
+.seccionProductos__cards--Boxes h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.seccionProductos__cards--Boxes p {
+    font-size: 17px;
+    margin-bottom: 5px;
 }
 
 @media(max-width:799px) {
@@ -445,12 +465,19 @@
     }
 
     .seccionProductos__cards--Boxes {
-        width: 255px;
-        height: 430px;
+        width: 172px;
     }
 
     .seccionProductos__cards {
-        gap: 25px;
+        gap: 20px;
+    }
+
+    .seccionProductos__cards--Boxes h3 {
+        font-size: 14px;
+    }
+
+    .seccionProductos__cards--Boxes p {
+        font-size: 15px;
     }
 }
 
@@ -461,6 +488,28 @@
 
     .seccionBannerPrincipal {
         margin-top: 75px;
+    }
+
+    .seccionProductos__cards--Boxes {
+        width: 240px;
+    }
+
+    .seccionProductos__cards--Boxes h3 {
+        font-size: 15px;
+    }
+
+    .seccionProductos__cards--Boxes p {
+        font-size: 16px;
+    }
+
+    .pagination {
+        width: 670px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .seccionProductos {
+        margin-bottom: 4em;
     }
 }
 
@@ -974,27 +1023,20 @@
     }
 }
 
-
-
-
-
-
 .seccionAnclaBoton {
-    transform: translate3d(0, 100px, 0); /*Agregar este estilo adicional de la clase .seccionAnclaBoton */
+    transform: translate3d(0, 100px, 0);
 }
 
-/*Agregar todo esta clase nueva adicional*/
+
 .seccionAnclaBoton.active {
     transform: translate3d(0, 0, 0);
 }
 
 
 .seccionNavBarPage {
-    transition: transform 0.6s ease; /*Agregar este estilo adicional de la clase .seccionNavBarPage */
+    transition: transform 0.6s ease;
 }
 
-
-/*Agregar todo esto que son clases nuevas adicionales*/
 .seccionNavBarPage.active {
     position: fixed;
     left: 0;
@@ -1035,7 +1077,7 @@
     appearance: none;
     background-color: #fff;
     border: 2px solid #ccc;
-    border-radius: 25px;
+    border-radius: 18px;
     font-size: 16px;
     padding: 10px 20px;
     width: 100%;
@@ -1043,27 +1085,27 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-right: 10px;
-  }
-  
-  .seccionNavBarPage__categorias:hover {
+}
+
+.seccionNavBarPage__categorias:hover {
     border-color: #007bff;
-  }
-  
-  .seccionNavBarPage__categorias:focus {
+}
+
+.seccionNavBarPage__categorias:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  
-  .seccionNavBarPage__categorias option {
+}
+
+.seccionNavBarPage__categorias option {
     background-color: #fff;
     color: #333;
     padding: 10px;
     font-size: 16px;
-  }
-   
-  .seccionNavBarPage__categorias::after {
-    content: '\25BC'; 
+}
+
+.seccionNavBarPage__categorias::after {
+    content: '\25BC';
     font-size: 20px;
     color: #007bff;
     position: absolute;
@@ -1071,133 +1113,151 @@
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-  }
+}
 
 
-  .seccionProductos__cards_agregar {
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #ffffff;
+.seccionProductos__cards_agregar {
+    margin-top: 8px;
+    background-color: var(--color-fondo);
+    color: #000;
     border: none;
-    padding: 10px 20px; 
-    border-radius: 5px; 
+    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s; 
-  }
-  
-  .seccionProductos__cards_agregar:hover {
-    background-color: #0056b3; 
-  }
+    transition: background-color 0.3s;
+    margin-bottom: 18px;
+    transition: all .25s ease-in-out;
+}
+
+.seccionProductos__cards_agregar:hover {
+    background-color: var(--color-hover);
+    color: var(--color-secundario);
+}
 
 
-  .seccionNavBarPage__navbar-icon--carrito-numero {
-    position: absolute; /* Posiciona el número de manera absoluta dentro del contenedor */
-    top: -5px; /* Ajusta la posición hacia arriba */
-    right: -5px; /* Ajusta la posición hacia la derecha */
-    background-color: red; /* Fondo rojo */
-    color: white; /* Color del texto blanco */
-    font-size: 12px; /* Tamaño de la fuente para el número */
-    width: 18px; /* Ancho fijo para el círculo */
-    height: 18px; /* Alto fijo para el círculo */
-    border-radius: 50%; /* Hace que el número sea circular */
-    display: none; /* Utiliza flexbox para centrar el número */
-    align-items: center; /* Centra el número verticalmente */
-    justify-content: center; /* Centra el número horizontalmente */
-    font-weight: bold; /* Hace que el número sea más prominente */
- 
-  }
+.seccionNavBarPage__navbar-icon--carrito-numero {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
 
 
-#buscador-mobil-container{
+#buscador-mobil-container {
     width: 80%;
     margin: 10px auto;
 }
 
 
-
-/* Contenedor general del buscador y el select */
 #buscador-mobil-container .seccionNavBarPage__navbar-redes--second {
-    display: flex; /* Para alinearlos en fila */
-    gap: 10px; /* Espaciado entre elementos */
-    align-items: center; /* Centrar verticalmente */
-  }
-  
-  /* Ajustar el ancho del select */
-  #buscador-mobil-container .seccionNavBarPage__categorias {
-    flex: 1; /* Ocupa menos espacio */
-    max-width: 200px; /* Limita su ancho máximo */
-  }
-  
-  /* Ajustar el buscador */
-  #buscador-mobil-container .seccionNavBarPage__navbar--inputBoton {
-    flex: 3; /* Ocupa más espacio */
-    padding: 10px; /* Espaciado interno para un diseño limpio */
-    width: 100%; /* Asegura que se adapte al contenedor */
-    max-width: 600px; /* Define un ancho máximo opcional */
-    border: 1px solid #ccc; /* Borde ligero */
-    border-radius: 5px; /* Esquinas redondeadas */
-    font-size: 16px; /* Tamaño de texto */
-  }
-  
-  /* Ícono del buscador */
-  #buscador-mobil-container .seccionNavBarPage__navbar-icon--search {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+
+}
+
+/* Ajustar el ancho del select */
+#buscador-mobil-container .seccionNavBarPage__categorias {
+    flex: 1;
+    /* Ocupa menos espacio */
+    max-width: 200px;
+    /* Limita su ancho máximo */
+}
+
+/* Ajustar el buscador */
+#buscador-mobil-container .seccionNavBarPage__navbar--inputBoton {
+    flex: 3;
+    /* Ocupa más espacio */
+    padding: 10px;
+    /* Espaciado interno para un diseño limpio */
+    width: 100%;
+    /* Asegura que se adapte al contenedor */
+    max-width: 600px;
+    /* Define un ancho máximo opcional */
+    border: 1px solid #ccc;
+    /* Borde ligero */
+    border-radius: 5px;
+    /* Esquinas redondeadas */
+    font-size: 16px;
+    /* Tamaño de texto */
+}
+
+/* Ícono del buscador */
+#buscador-mobil-container .seccionNavBarPage__navbar-icon--search {
     cursor: pointer;
     color: #333;
-    margin-left: 10px; /* Espaciado a la izquierda del input */
-  }
+    margin-left: 10px;
+    /* Espaciado a la izquierda del input */
+}
 
 
 
-  .pagination {
+.pagination {
     display: flex;
-    flex-wrap: wrap; /* Permite que los botones se muevan a la siguiente línea si no hay espacio */
+    flex-wrap: wrap;
+    /* Permite que los botones se muevan a la siguiente línea si no hay espacio */
     justify-content: center;
     gap: 5px;
     margin-top: 20px;
-  }
-  
-  .pagination__button {
+}
+
+.pagination__button {
     padding: 10px 15px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
     cursor: pointer;
     font-size: 16px;
-    min-width: 40px; /* Asegura un tamaño mínimo en botones */
-    text-align: center; /* Centra el texto */
-  }
-  
-  .pagination__button.active {
-    background-color: #007bff;
+    min-width: 40px;
+    /* Asegura un tamaño mínimo en botones */
+    text-align: center;
+}
+
+.pagination__button.active {
+    background-color: var(--color-hover);
+    font-weight: 700;
     color: white;
-    border-color: #007bff;
-  }
-  
-  .pagination__button:hover {
-    background-color: #0056b3;
-    color: white;
-  }
-  
-  /* Estilos responsivos */
-  @media (max-width: 768px) {
+    border-color: var(--color-hover);
+    transition: all .25s ease-in-out;
+}
+
+.pagination__button:hover {
+    background-color: var(--color-fondo);
+    color: var(--color-primario);
+    font-weight: 700;
+    border-color: var(--color-fondo);
+}
+
+@media (max-width: 768px) {
     .pagination {
-      gap: 3px; /* Reduce el espacio entre botones en dispositivos más pequeños */
+        gap: 3px;
     }
-  
+
     .pagination__button {
-      padding: 8px 10px; /* Reduce el tamaño de los botones */
-      font-size: 14px; /* Disminuye el tamaño del texto */
+        padding: 8px 10px;
+        font-size: 14px;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .pagination {
-      gap: 2px; /* Aún menos espacio para dispositivos muy pequeños */
+        gap: 2px;
     }
-  
+
     .pagination__button {
-      padding: 6px 8px;
-      font-size: 12px;
+        padding: 6px 8px;
+        font-size: 12px;
     }
-  }
-  
+}
