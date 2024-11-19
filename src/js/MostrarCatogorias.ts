@@ -1,6 +1,6 @@
 import { ObtenerCategorias } from "../services/Categorias";
 
-export async function MostrarCategorias(element) {
+export async function MostrarCategorias(element: HTMLSelectElement) {
   const categorias = await ObtenerCategorias();
 
   categorias.forEach((categoria) => {

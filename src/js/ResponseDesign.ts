@@ -1,6 +1,13 @@
-export function ResponsiveDesign() {
+export function ResponsiveDesign(): void {
   const buscador = document.getElementById("buscador");
   const containerMobil = document.getElementById("buscador-mobil-container");
+
+  if (!buscador || !containerMobil) {
+    console.error(
+      'No se encontraron los elementos "buscador" o "buscador-mobil-container".'
+    );
+    return;
+  }
 
   const isMobile = window.matchMedia("(max-width: 768px)");
 

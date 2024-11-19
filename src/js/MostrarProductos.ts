@@ -1,18 +1,27 @@
+import { Producto } from "../models/Producto.type";
 import { ObtenerProductos } from "../services/Productos";
 import { IncrementarContador } from "./IncrementarContador";
 
-export let productosGlobales = [];
-export let currentPage = 1;
-const itemsPerPage = 10;
+export let productosGlobales: Producto[] = [];
+export let currentPage: number = 1;
+const itemsPerPage: number = 10;
 
-export async function MostrarProductos(element) {
-  productosGlobales = await ObtenerProductos();
+export async function MostrarProductos(element: HTMLElement): Promise<void> {
+  try {
+    productosGlobales = await ObtenerProductos();
 
-  renderPage(productosGlobales, element, currentPage);
-  createPaginationControls(productosGlobales, element);
+    renderPage(productosGlobales, element, currentPage);
+    createPaginationControls(productosGlobales, element);
+  } catch (error) {
+    console.error("Error al obtener los productos:", error);
+    element.innerHTML = `<p>Error al cargar los productos. Por favor, intentalo nuevamente.</p>`;
+  }
 }
-
-export function renderPage(productos, element, page) {
+export function renderPage(
+  productos: Producto[],
+  element: HTMLElement,
+  page: number
+): void {
   element.innerHTML = "";
 
   const startIndex = (page - 1) * itemsPerPage;
@@ -41,7 +50,14 @@ export function renderPage(productos, element, page) {
     agregarProducto.textContent = "Agregar al carrito";
     agregarProducto.classList.add("seccionProductos__cards_agregar");
     agregarProducto.addEventListener("click", () => {
-      IncrementarContador(document.querySelector("#contador-carrito"));
+      const contadorCarrito = document.querySelector("#contador-carrito");
+      if (contadorCarrito instanceof HTMLElement) {
+        IncrementarContador(contadorCarrito);
+      } else {
+        console.error(
+          'No se encontro un elemento valido con el selector "#contador-carrito".'
+        );
+      }
     });
 
     tarjetaProducto.appendChild(imagenProducto);
@@ -54,7 +70,10 @@ export function renderPage(productos, element, page) {
   });
 }
 
-function createPaginationControls(productos, element) {
+function createPaginationControls(
+  productos: Producto[],
+  element: HTMLElement
+): void {
   const totalPages = Math.ceil(productos.length / itemsPerPage);
 
   const paginationContainer = document.createElement("div");
@@ -62,7 +81,7 @@ function createPaginationControls(productos, element) {
 
   for (let i = 1; i <= totalPages; i++) {
     const button = document.createElement("button");
-    button.textContent = i;
+    button.textContent = i.toString();
     button.classList.add("pagination__button");
 
     if (i === currentPage) {
@@ -78,10 +97,14 @@ function createPaginationControls(productos, element) {
     paginationContainer.appendChild(button);
   }
 
-  element.parentNode.appendChild(paginationContainer);
+  const parentElement = element.parentNode as HTMLElement;
+  parentElement.appendChild(paginationContainer);
 }
 
-function updatePaginationButtons(container, activePage) {
+function updatePaginationButtons(
+  container: HTMLElement,
+  activePage: number
+): void {
   const buttons = container.querySelectorAll(".pagination__button");
   buttons.forEach((button, index) => {
     if (index + 1 === activePage) {
