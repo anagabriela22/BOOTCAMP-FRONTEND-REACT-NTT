@@ -1,373 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/estilos.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500"
-    />
 
-    <link rel="stylesheet" href="fonts.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="favicon icon"
-      type="image/x-icon"
-      href="/src/assets/logo-favicon.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/estilos.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500" />
 
-    <title>La Tiendita</title>
-  </head>
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="favicon icon" type="image/x-icon" href="/src/assets/logo-favicon.png" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
 
-  <body>
-    <div class="seccionNavBarPage">
-      <div class="seccionNavBarPage__boxes seccionNavBarPage__box--first">
-        <div class="seccionNavBarPage__contenido-NavBarside--first">
-          <div class="seccionNavBarPage__navbar-contactos--first">
-            <p class="seccionNavBarPage__navbar--telefonos">
-              <span
-                class="seccionNavBarPage__navbar--icon fa-solid fa-phone"
-              ></span>
-              <a
-                class="seccionNavBarPage__navbar--iphone"
-                href="tel:+51 988335690"
-                target="_blank"
-                rel="noopener noreferrer"
-                >+51 988335690</a
-              >
-            </p>
+  <title>La Tiendita</title>
+</head>
 
-            <p class="seccionNavBarPage__navbar--telefonos">
-              <span
-                class="seccionNavBarPage__navbar--icon fa-solid fa-location-dot"
-              ></span>
-              <a
-                class="seccionNavBarPage__navbar--iphone"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Av. Javier Prado Este 5282, La Molina</a
-              >
-            </p>
+<body>
+  <div class="seccionNavBarPage">
+    <div class="seccionNavBarPage__boxes seccionNavBarPage__box--first">
+      <div class="seccionNavBarPage__contenido-NavBarside--first">
+        <div class="seccionNavBarPage__navbar-contactos--first">
+          <p class="seccionNavBarPage__navbar--telefonos">
+            <span class="seccionNavBarPage__navbar--icon fa-solid fa-phone"></span>
+            <a class="seccionNavBarPage__navbar--iphone" href="tel:+51 988335690" target="_blank"
+              rel="noopener noreferrer">+51 988335690</a>
+          </p>
+
+          <p class="seccionNavBarPage__navbar--telefonos">
+            <span class="seccionNavBarPage__navbar--icon fa-solid fa-location-dot"></span>
+            <a class="seccionNavBarPage__navbar--iphone" href="#" target="_blank" rel="noopener noreferrer">Av. Javier
+              Prado Este 5282, La Molina</a>
+          </p>
+        </div>
+
+        <div class="seccionNavBarPage__navbar-contactos--second">
+          <a class="seccionNavBarPage__navbar-icon--redes fa-brands fa-facebook-f" href="#" target="_blank"
+            rel="noopener noreferrer"></a>
+          <a class="seccionNavBarPage__navbar-icon--redes fa-brands fa-twitter" href="#" target="_blank"
+            rel="noopener noreferrer"></a>
+          <a class="seccionNavBarPage__navbar-icon--redes fa-brands fa-instagram" href="#" target="_blank"
+            rel="noopener noreferrer"></a>
+          <a class="seccionNavBarPage__navbar-icon--redes fa-brands fa-google-plus-g" href="#" target="_blank"
+            rel="noopener noreferrer">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="seccionNavBarPage__boxes seccionNavBarPage__box--second">
+      <div id="buscador-pc-container" class="seccionNavBarPage__contenido-NavBarside--second">
+        <div class="seccionNavBarPage__navbar-redes--first">
+          <img class="seccionNavBarPage__contenido--Logo" src="/src/assets/logo-tienda-desktop.png" alt="215"
+            width="231" height="67" />
+        </div>
+        <div id="buscador" class="seccionNavBarPage__navbar-redes--second">
+          <select id="categorias" class="seccionNavBarPage__categorias">
+            <option selected value="all">Categorías</option>
+          </select>
+          <div class="seccionNavBarPage__navbar-redes--Buscador">
+            <input id="caja-busqueda" class="seccionNavBarPage__navbar--inputBoton" type="text"
+              placeholder="Buscar..." />
+            <span class="seccionNavBarPage__navbar-icon--search fa-solid fa-magnifying-glass"></span>
           </div>
-
-          <div class="seccionNavBarPage__navbar-contactos--second">
-            <a
-              class="seccionNavBarPage__navbar-icon--redes fa-brands fa-facebook-f"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
-            <a
-              class="seccionNavBarPage__navbar-icon--redes fa-brands fa-twitter"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
-            <a
-              class="seccionNavBarPage__navbar-icon--redes fa-brands fa-instagram"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
-            <a
-              class="seccionNavBarPage__navbar-icon--redes fa-brands fa-google-plus-g"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            </a>
+        </div>
+        <div class="seccionNavBarPage__navbar-redes--third">
+          <div class="seccionNavBarPage__navbar-redes--logincompra">
+            <span class="seccionNavBarPage__navbar-icon--login lnr lnr-user"></span>
+            <span class="seccionNavBarPage__navbar-icon--carrito lnr lnr-cart">
+              <span id="contador-carrito" class="seccionNavBarPage__navbar-icon--carrito-numero"></span>
+            </span>
           </div>
         </div>
       </div>
+    </div>
+    <div id="buscador-mobil-container" class=""></div>
+  </div>
 
-      <div class="seccionNavBarPage__boxes seccionNavBarPage__box--second">
-        <div
-          id="buscador-pc-container"
-          class="seccionNavBarPage__contenido-NavBarside--second"
-        >
-          <div class="seccionNavBarPage__navbar-redes--first">
-            <img
-              class="seccionNavBarPage__contenido--Logo"
-              src="/src/assets/logo-tienda-desktop.png"
-              alt="215"
-              width="231"
-              height="67"
-            />
-          </div>
-          <div id="buscador" class="seccionNavBarPage__navbar-redes--second">
-            <select id="categorias" class="seccionNavBarPage__categorias">
-              <option selected value="all">Todas las categorias</option>
-            </select>
-            <div class="seccionNavBarPage__navbar-redes--Buscador">
-              <input
-                id="caja-busqueda"
-                class="seccionNavBarPage__navbar--inputBoton"
-                type="text"
-                placeholder="Buscar..."
-              />
-              <span
-                class="seccionNavBarPage__navbar-icon--search fa-solid fa-magnifying-glass"
-              ></span>
+  <div class="seccionBannerPrincipal">
+    <div class="seccionBannerPrincipal__contenido">
+      <p class="seccionBannerPrincipal__contenido--Textos">
+        Aromas de Calidad
+      </p>
+      <p class="seccionBannerPrincipal__contenido--descripcion">
+        Utilizamos las notas más exquisitas para crear fragancias únicas que despiertan emociones inolvidables.
+      </p>
+
+      <a class="seccionBannerPrincipal__botonbanner" href="#" target="_blank" rel="noopener noreferrer">Ver mas
+        fragancias</a>
+    </div>
+
+    <div class="seccionBannerPrincipal__itemPictures">
+      <img alt="banner principal" class="seccionBannerPrincipal__Imagen" loading="lazy"
+        src="/src/assets/banner-principal.webp" type="image/webp" width="1918" height="753" />
+    </div>
+  </div>
+
+  <div class="seccionProductos">
+    <p class="seccionProductos__titulo">Productos Top</p>
+
+    <div id="productos" class="seccionProductos__cards"></div>
+  </div>
+
+  <div class="seccionSR__servicios">
+    <div class="seccionSR__Cajas">
+      <div class="seccionSR__iconmegaHeader">
+        <div class="seccionSR__iconmega lnr lnr-car"></div>
+      </div>
+
+      <p class="seccionSR__nombresTitulo">Delivery Gratis</p>
+      <p class="seccionSR__descripcion">
+        Si pides más de 3 productos, con gusto en la cuarta te las
+        entregaremos gratis.
+      </p>
+    </div>
+    <div class="seccionSR__Cajas">
+      <div class="seccionSR__iconmegaHeader">
+        <div class="seccionSR__iconmega lnr lnr-map"></div>
+      </div>
+      <p class="seccionSR__nombresTitulo">Ubicación Conveniente</p>
+      <p class="seccionSR__descripcion">
+        Nuestra pizzería está situada en el centro de la ciudad y es muy fácil
+        llegar incluso los fines de semana.
+      </p>
+    </div>
+    <div class="seccionSR__Cajas">
+      <div class="seccionSR__iconmegaHeader">
+        <div class="seccionSR__iconmega lnr lnr-earth"></div>
+      </div>
+      <p class="seccionSR__nombresTitulo">Wi-Fi Gratis</p>
+      <p class="seccionSR__descripcion">
+        Disponemos de Wifi gratuito a disposición de todos los clientes y
+        visitantes de nuestra tienda.
+      </p>
+    </div>
+    <div class="seccionSR__Cajas">
+      <div class="seccionSR__iconmegaHeader">
+        <div class="seccionSR__iconmega lnr lnr-thumbs-up"></div>
+      </div>
+      <p class="seccionSR__nombresTitulo">Servicio de Calidad</p>
+      <p class="seccionSR__descripcion">
+        El cliente es nuestra prioridad #1 ya que brindamos un servicio al
+        cliente de primer nivel.
+      </p>
+    </div>
+  </div>
+
+  <div class="seccionFooter">
+    <div class="seccionFooter__container">
+      <div class="seccionFooter__boxes seccionFooter__boxes--first">
+        <div class="seccionFooter__subbox seccionFooter__box--first">
+          <p class="seccionFooter__Servicios">Lo Que Ofrecemos</p>
+          <ul class="seccionFooter__ListaOfrecer">
+            <li>
+              <a href="#">Pizzas</a>
+            </li>
+            <li><a href="#">Tragos</a></li>
+            <li><a href="#">Hamburguesas</a></li>
+            <li><a href="#">Ensaladas</a></li>
+            <li><a href="#">Bebidas</a></li>
+            <li><a href="#">Jugos</a></li>
+          </ul>
+        </div>
+        <div class="seccionFooter__subbox seccionFooter__box--second">
+          <p class="seccionFooter__Servicios">Información</p>
+          <ul class="seccionFooter__ListaOfrecer">
+            <li>
+              <a href="#">Nosotros</a>
+            </li>
+            <li><a href="#">Últimas Noticias</a></li>
+            <li><a href="#">Otras Compras</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Compras</a></li>
+            <li><a href="#">Contactanos</a></li>
+          </ul>
+        </div>
+        <div class="seccionFooter__subbox seccionFooter__box--third">
+          <p class="seccionFooter__Servicios">Noticias</p>
+
+          <p class="seccionFooter__registrar">
+            Regístrese hoy para recibir las últimas noticias y
+            actualizaciones.
+          </p>
+
+          <div class="seccionFooter__botonesSubscribe">
+            <div class="seccionFooter__botonesdoble">
+              <input class="seccionFooter__inputBoton" type="email" name="email" placeholder="Escribe tu E-mail" />
             </div>
-          </div>
-          <div class="seccionNavBarPage__navbar-redes--third">
-            <div class="seccionNavBarPage__navbar-redes--logincompra">
-              <span
-                class="seccionNavBarPage__navbar-icon--login lnr lnr-user"
-              ></span>
-              <span
-                class="seccionNavBarPage__navbar-icon--carrito lnr lnr-cart"
-              >
-                <span
-                  id="contador-carrito"
-                  class="seccionNavBarPage__navbar-icon--carrito-numero"
-                ></span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="buscador-mobil-container" class=""></div>
-    </div>
-
-    <div class="seccionBannerPrincipal">
-      <div class="seccionBannerPrincipal__contenido">
-        <p class="seccionBannerPrincipal__contenido--Textos">
-          Ingredientes de calidad
-        </p>
-        <p class="seccionBannerPrincipal__contenido--descripcion">
-          Utilizamos sólo los mejores ingredientes para hacer pizzas únicas para
-          nuestros clientes.
-        </p>
-
-        <a
-          class="seccionBannerPrincipal__botonbanner"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Ver mas productos</a
-        >
-      </div>
-
-      <div class="seccionBannerPrincipal__itemPictures">
-        <img
-          alt="banner principal"
-          class="seccionBannerPrincipal__Imagen"
-          loading="lazy"
-          src="/src/assets/bannerprincipal.jpg"
-          type="image/webp"
-          width="1918"
-          height="753"
-        />
-      </div>
-    </div>
-
-    <div class="seccionProductos">
-      <p class="seccionProductos__titulo">Productos Top</p>
-
-      <div id="productos" class="seccionProductos__cards"></div>
-    </div>
-
-    <div class="seccionSR__servicios">
-      <div class="seccionSR__Cajas">
-        <div class="seccionSR__iconmegaHeader">
-          <div class="seccionSR__iconmega lnr lnr-car"></div>
-        </div>
-
-        <p class="seccionSR__nombresTitulo">Delivery Gratis</p>
-        <p class="seccionSR__descripcion">
-          Si pides más de 3 productos, con gusto en la cuarta te las
-          entregaremos gratis.
-        </p>
-      </div>
-      <div class="seccionSR__Cajas">
-        <div class="seccionSR__iconmegaHeader">
-          <div class="seccionSR__iconmega lnr lnr-map"></div>
-        </div>
-        <p class="seccionSR__nombresTitulo">Ubicación Conveniente</p>
-        <p class="seccionSR__descripcion">
-          Nuestra pizzería está situada en el centro de la ciudad y es muy fácil
-          llegar incluso los fines de semana.
-        </p>
-      </div>
-      <div class="seccionSR__Cajas">
-        <div class="seccionSR__iconmegaHeader">
-          <div class="seccionSR__iconmega lnr lnr-earth"></div>
-        </div>
-        <p class="seccionSR__nombresTitulo">Wi-Fi Gratis</p>
-        <p class="seccionSR__descripcion">
-          Disponemos de Wifi gratuito a disposición de todos los clientes y
-          visitantes de nuestra tienda.
-        </p>
-      </div>
-      <div class="seccionSR__Cajas">
-        <div class="seccionSR__iconmegaHeader">
-          <div class="seccionSR__iconmega lnr lnr-thumbs-up"></div>
-        </div>
-        <p class="seccionSR__nombresTitulo">Servicio de Calidad</p>
-        <p class="seccionSR__descripcion">
-          El cliente es nuestra prioridad #1 ya que brindamos un servicio al
-          cliente de primer nivel.
-        </p>
-      </div>
-    </div>
-
-    <div class="seccionFooter">
-      <div class="seccionFooter__container">
-        <div class="seccionFooter__boxes seccionFooter__boxes--first">
-          <div class="seccionFooter__subbox seccionFooter__box--first">
-            <p class="seccionFooter__Servicios">Lo Que Ofrecemos</p>
-            <ul class="seccionFooter__ListaOfrecer">
-              <li>
-                <a href="#">Pizzas</a>
-              </li>
-              <li><a href="#">Tragos</a></li>
-              <li><a href="#">Hamburguesas</a></li>
-              <li><a href="#">Ensaladas</a></li>
-              <li><a href="#">Bebidas</a></li>
-              <li><a href="#">Jugos</a></li>
-            </ul>
-          </div>
-          <div class="seccionFooter__subbox seccionFooter__box--second">
-            <p class="seccionFooter__Servicios">Información</p>
-            <ul class="seccionFooter__ListaOfrecer">
-              <li>
-                <a href="#">Nosotros</a>
-              </li>
-              <li><a href="#">Últimas Noticias</a></li>
-              <li><a href="#">Otras Compras</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Compras</a></li>
-              <li><a href="#">Contactanos</a></li>
-            </ul>
-          </div>
-          <div class="seccionFooter__subbox seccionFooter__box--third">
-            <p class="seccionFooter__Servicios">Noticias</p>
-
-            <p class="seccionFooter__registrar">
-              Regístrese hoy para recibir las últimas noticias y
-              actualizaciones.
-            </p>
-
-            <div class="seccionFooter__botonesSubscribe">
-              <div class="seccionFooter__botonesdoble">
-                <input
-                  class="seccionFooter__inputBoton"
-                  type="email"
-                  name="email"
-                  placeholder="Escribe tu E-mail"
-                />
-              </div>
-              <div class="seccionFooter__botonesdoble">
-                <button class="seccionFooter__Suscribete">
-                  <span class="seccionFooter__Suscribete--texto"
-                    >Suscribete</span
-                  >
-                  <span
-                    class="seccionFooter__Suscribete--icon fa-solid fa-paper-plane"
-                  ></span>
-                </button>
-              </div>
+            <div class="seccionFooter__botonesdoble">
+              <button class="seccionFooter__Suscribete">
+                <span class="seccionFooter__Suscribete--texto">Suscribete</span>
+                <span class="seccionFooter__Suscribete--icon fa-solid fa-paper-plane"></span>
+              </button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="seccionFooter__boxes seccionFooter__boxes--second">
-          <div class="seccionFooter__subbox seccionFooter__subox--first">
-            <p class="seccionFooter__porcentaje">
-              <img
-                src="/src/assets/like-icon-58x25.webp"
-                alt="logo like"
-                width="58"
-                height="25"
-              />
-              9.4k
-            </p>
-          </div>
-          <div class="seccionFooter__subbox seccionFooter__subox--first">
-            <div class="seccionFooter__informaciones">
+      <div class="seccionFooter__boxes seccionFooter__boxes--second">
+        <div class="seccionFooter__subbox seccionFooter__subox--first">
+          <p class="seccionFooter__porcentaje">
+            <img src="/src/assets/like-icon-58x25.webp" alt="logo like" width="58" height="25" />
+            9.4k
+          </p>
+        </div>
+        <div class="seccionFooter__subbox seccionFooter__subox--first">
+          <div class="seccionFooter__informaciones">
+            <div class="seccionFooter__informaciones--boxes">
+              <span class="seccionFooter__informaciones--icon fa-solid fa-phone"></span>
+              <a href="tel:#988335690" class="seccionFooter__informaciones--textos">+51 998335690</a>
+            </div>
+            <div class="seccionFooter__informaciones--boxes">
               <div class="seccionFooter__informaciones--boxes">
-                <span
-                  class="seccionFooter__informaciones--icon fa-solid fa-phone"
-                ></span>
-                <a
-                  href="tel:#988335690"
-                  class="seccionFooter__informaciones--textos"
-                  >+51 998335690</a
-                >
+                <span class="seccionFooter__informaciones--icon fa-regular fa-envelope"></span>
+                <a href="tel:#988335690" class="seccionFooter__informaciones--textos">info@hotmail.com</a>
               </div>
+            </div>
+            <div class="seccionFooter__informaciones--boxes">
               <div class="seccionFooter__informaciones--boxes">
-                <div class="seccionFooter__informaciones--boxes">
-                  <span
-                    class="seccionFooter__informaciones--icon fa-regular fa-envelope"
-                  ></span>
-                  <a
-                    href="tel:#988335690"
-                    class="seccionFooter__informaciones--textos"
-                    >info@hotmail.com</a
-                  >
-                </div>
-              </div>
-              <div class="seccionFooter__informaciones--boxes">
-                <div class="seccionFooter__informaciones--boxes">
-                  <a
-                    class="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-facebook-f"
-                    href="#"
-                  ></a>
-                  <a
-                    class="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-twitter"
-                    href="#"
-                  ></a>
-                  <a
-                    class="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-instagram"
-                    href="#"
-                  ></a>
-                  <a
-                    class="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-google-plus-g"
-                    href="#"
-                  ></a>
-                </div>
+                <a class="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-facebook-f"
+                  href="#"></a>
+                <a class="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-twitter"
+                  href="#"></a>
+                <a class="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-instagram"
+                  href="#"></a>
+                <a class="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-google-plus-g"
+                  href="#"></a>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="seccionFooter__boxes seccionFooter__boxes--third">
-          <div class="seccionFooter__subbox">
-            <p class="seccionFooter__direccion">
-              Av. Javier Prado Este 5282, La Molina
-            </p>
-          </div>
-          <div class="seccionFooter__subbox">
-            <p class="seccionFooter__derechos">
-              © 2024. Todos los derechos reservados. Diseño de Ana Gabriela
-            </p>
-          </div>
+      <div class="seccionFooter__boxes seccionFooter__boxes--third">
+        <div class="seccionFooter__subbox">
+          <p class="seccionFooter__direccion">
+            Av. Javier Prado Este 5282, La Molina
+          </p>
+        </div>
+        <div class="seccionFooter__subbox">
+          <p class="seccionFooter__derechos">
+            © 2024. Todos los derechos reservados. Diseño de Ana Gabriela
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <a
-      href="#"
-      id="ui-to-top"
-      class="seccionAnclaBoton fa-solid fa-arrow-up"
-    ></a>
-  </body>
+  <a href="#" id="ui-to-top" class="seccionAnclaBoton fa-solid fa-arrow-up"></a>
+</body>
 
-  <!--<div id="app"></div>-->
-  <script type="module" src="/main.ts"></script>
+<!--<div id="app"></div>-->
+<script type="module" src="/main.ts"></script>
+
 </html>
