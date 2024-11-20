@@ -1,8 +1,9 @@
 import { productosGlobales, renderPage } from "./MostrarProductos";
 
 export function FiltrarPorBusqueda(busqueda: string): void {
-  const contenedor = document.querySelector("#productos") as HTMLElement;
-  const pagination = document.querySelector(".pagination") as HTMLElement;
+  // otra forma de tipar es usando los genericos que exponen los query selector
+  const contenedor = document.querySelector<HTMLElement>("#productos");
+  const pagination = document.querySelector<HTMLElement>(".pagination");
 
   if (!contenedor || !pagination) {
     console.error(
@@ -11,7 +12,8 @@ export function FiltrarPorBusqueda(busqueda: string): void {
     return;
   }
 
-  const filtro: string = busqueda.toLowerCase();
+  // hay tipado implicito en este caso ya que toLowerCase solo retonar'a un stirng
+  const filtro = busqueda.toLowerCase();
 
   if (!filtro.trim()) {
     renderPage(productosGlobales, contenedor, 1);
@@ -43,9 +45,9 @@ export function FiltrarPorBusqueda(busqueda: string): void {
 }
 
 function SinCoincidencias(contenedor: HTMLElement): void {
-  let mensaje = document.querySelector(
+  let mensaje = document.querySelector<HTMLParagraphElement>(
     "#mensaje-sin-coincidencias"
-  ) as HTMLParagraphElement;
+  );
 
   // Crea el mensaje si no existe
   if (!mensaje) {
