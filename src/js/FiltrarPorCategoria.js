@@ -1,9 +1,12 @@
 import { currentPage, productosGlobales, renderPage } from "./mostrarProductos";
 
+// camel case
 export function FiltrarPorCategoria(categoria) {
+  // un solo idioma
   const contenedor = document.querySelector("#productos");
   const pagination = document.querySelector(".pagination");
 
+  // usemos constantes para valores fijos no su valor directamente
   if (categoria === "all") {
     renderPage(productosGlobales, contenedor, currentPage);
     pagination.style.display = "flex";
@@ -11,6 +14,7 @@ export function FiltrarPorCategoria(categoria) {
     return;
   }
 
+  // un solo idioma
   const productosFiltrados = productosGlobales.filter(
     (producto) => producto.category === categoria
   );
@@ -25,6 +29,7 @@ export function FiltrarPorCategoria(categoria) {
   }
 }
 
+// mismo código de FiltrarPorBusqueda.js por lo que se podría tener una función reutilizable que solo haga esto y reciba parametros para modificar su contenido.
 function SinCoincidencias(contenedor) {
   let mensaje = document.querySelector("#mensaje-sin-coincidencias");
 
@@ -39,6 +44,7 @@ function SinCoincidencias(contenedor) {
   }
 }
 
+// igual código repetido
 function ConCoincidencias(contenedor) {
   const mensaje = document.querySelector("#mensaje-sin-coincidencias");
   if (mensaje) {
