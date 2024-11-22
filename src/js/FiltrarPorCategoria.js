@@ -1,13 +1,16 @@
-import { currentPage, productosGlobales, renderPage } from "./mostrarProductos";
+import { monstrarMensajeSinCoincidencias, ocultarMensajeSinCoincidencias } from "../utils/MostrarMensajeCoincidencias";
+import { paginaActual, productosGlobales, renderizarPagina } from "./MostrarProductos";
 
-export function FiltrarPorCategoria(categoria) {
+export function filtrarPorCategoria(categoria) {
+
+  const categoriaTodos = "all"
   const contenedor = document.querySelector("#productos");
-  const pagination = document.querySelector(".pagination");
+  const paginacion = document.querySelector(".paginacion");
 
-  if (categoria === "all") {
-    renderPage(productosGlobales, contenedor, currentPage);
-    pagination.style.display = "flex";
-    ConCoincidencias(contenedor);
+  if (categoria === categoriaTodos) {
+    renderizarPagina(productosGlobales, contenedor, paginaActual);
+    paginacion.style.display = "flex";
+    ocultarMensajeSinCoincidencias(contenedor);
     return;
   }
 
@@ -16,32 +19,11 @@ export function FiltrarPorCategoria(categoria) {
   );
 
   if (productosFiltrados.length > 0) {
-    renderPage(productosFiltrados, contenedor, 1);
-    pagination.style.display = "none";
-    ConCoincidencias(contenedor);
+    renderizarPagina(productosFiltrados, contenedor, 1);
+    paginacion.style.display = "none";
+    ocultarMensajeSinCoincidencias(contenedor);
   } else {
-    SinCoincidencias(contenedor);
-    pagination.style.display = "none";
-  }
-}
-
-function SinCoincidencias(contenedor) {
-  let mensaje = document.querySelector("#mensaje-sin-coincidencias");
-
-  if (!mensaje) {
-    mensaje = document.createElement("p");
-    mensaje.id = "mensaje-sin-coincidencias";
-    mensaje.textContent = "No se encontraron productos en esta categoría.";
-    mensaje.style.color = "red";
-    mensaje.style.textAlign = "center";
-    mensaje.style.marginTop = "20px";
-    contenedor.parentElement.appendChild(mensaje);
-  }
-}
-
-function ConCoincidencias(contenedor) {
-  const mensaje = document.querySelector("#mensaje-sin-coincidencias");
-  if (mensaje) {
-    mensaje.remove();
+    monstrarMensajeSinCoincidencias(contenedor);
+    paginacion.style.display = "none";
   }
 }

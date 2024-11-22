@@ -1,6 +1,4 @@
-export function IncrementarContador(element) {
-  console.log(element.style.display);
-
-  element.style.display = "flex";
-  element.textContent = Number(element.textContent) + 1;
+export function incrementarContador(elemento) {
+  elemento.style.display = "flex";
+  elemento.textContent = Number(elemento.textContent) + 1;
 }

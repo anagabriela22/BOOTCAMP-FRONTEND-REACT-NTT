@@ -1,15 +1,17 @@
-import { productosGlobales, renderPage } from "./mostrarProductos";
+import { monstrarMensajeSinCoincidencias, ocultarMensajeSinCoincidencias } from "../utils/MostrarMensajeCoincidencias";
+import { paginaActual, productosGlobales, renderizarPagina } from "./MostrarProductos";
 
-export function FiltrarPorBusqueda(busqueda) {
+export function filtrarPorBusqueda(busqueda) {
   const contenedor = document.querySelector("#productos");
-  const pagination = document.querySelector(".pagination");
+  const paginacion = document.querySelector(".paginacion");
 
   const filtro = busqueda.toLowerCase();
+  const ocultarProductos = true
 
   if (!filtro.trim()) {
-    renderPage(productosGlobales, contenedor, 1);
-    pagination.style.display = "";
-    ConCoincidencias(contenedor);
+    renderizarPagina(productosGlobales, contenedor, paginaActual);
+    paginacion.style.display = "";
+    ocultarMensajeSinCoincidencias(contenedor, ocultarProductos);
     return;
   }
 
@@ -26,42 +28,11 @@ export function FiltrarPorBusqueda(busqueda) {
   });
 
   if (productosFiltrados.length > 0) {
-    renderPage(productosFiltrados, contenedor, 1);
-    pagination.style.display = "none";
-    ConCoincidencias(contenedor);
+    renderizarPagina(productosFiltrados, contenedor, 1);
+    paginacion.style.display = "none";
+    ocultarMensajeSinCoincidencias(contenedor, ocultarProductos);
   } else {
-    SinCoincidencias(contenedor);
-    pagination.style.display = "none";
+    monstrarMensajeSinCoincidencias(contenedor, ocultarProductos);
+    paginacion.style.display = "none";
   }
-}
-
-function SinCoincidencias(contenedor) {
-  let mensaje = document.querySelector("#mensaje-sin-coincidencias");
-
-  // Crea el mensaje si no existe
-  if (!mensaje) {
-    mensaje = document.createElement("p");
-    mensaje.id = "mensaje-sin-coincidencias";
-    mensaje.textContent = "No se encontraron productos.";
-    mensaje.style.color = "red";
-    mensaje.style.textAlign = "center";
-    mensaje.style.marginTop = "20px";
-    contenedor.parentElement.appendChild(mensaje);
-  }
-
-  Array.from(contenedor.children).forEach((producto) => {
-    producto.style.display = "none";
-  });
-}
-
-function ConCoincidencias(contenedor) {
-  const mensaje = document.querySelector("#mensaje-sin-coincidencias");
-
-  if (mensaje) {
-    mensaje.remove();
-  }
-
-  Array.from(contenedor.children).forEach((producto) => {
-    producto.style.display = "";
-  });
 }

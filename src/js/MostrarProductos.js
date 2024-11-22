@@ -1,26 +1,27 @@
-import { ObtenerProductos } from "../services/Productos";
-import { IncrementarContador } from "./IncrementarContador";
+import { obtenerProductos } from "../services/Productos";
+import { incrementarContador } from "./IncrementarContador";
 
 export let productosGlobales = [];
-export let currentPage = 1;
-const itemsPerPage = 10;
+export let paginaActual = 1;
+const elementosPorPagina = 10;
 
-export async function MostrarProductos(element) {
-  productosGlobales = await ObtenerProductos();
+export async function mostrarProductos(elemento) {
+  productosGlobales = await obtenerProductos();
 
-  renderPage(productosGlobales, element, currentPage);
-  createPaginationControls(productosGlobales, element);
+  renderizarPagina(productosGlobales, elemento, paginaActual);
+  crearControlesPaginacion(productosGlobales, elemento);
 }
 
-export function renderPage(productos, element, page) {
-  element.innerHTML = "";
+export function renderizarPagina(productos, elemento, pagina) {
+  elemento.innerHTML = "";
 
-  const startIndex = (page - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const productosPagina = productos.slice(startIndex, endIndex);
+  const inicioIndice = (pagina - 1) * elementosPorPagina;
+  const finalIndice = inicioIndice + elementosPorPagina;
+  const productosPagina = productos.slice(inicioIndice, finalIndice);
 
   productosPagina.forEach((producto) => {
     const tarjetaProducto = document.createElement("div");
+
     tarjetaProducto.classList.add("seccionProductos__cards--Boxes");
     tarjetaProducto.setAttribute("data-categoria", producto.category);
 
@@ -41,7 +42,7 @@ export function renderPage(productos, element, page) {
     agregarProducto.textContent = "Agregar al carrito";
     agregarProducto.classList.add("seccionProductos__cards_agregar");
     agregarProducto.addEventListener("click", () => {
-      IncrementarContador(document.querySelector("#contador-carrito"));
+      incrementarContador(document.querySelector("#contador-carrito"));
     });
 
     tarjetaProducto.appendChild(imagenProducto);
@@ -50,44 +51,44 @@ export function renderPage(productos, element, page) {
     tarjetaProducto.appendChild(disponibilidadProducto);
     tarjetaProducto.appendChild(agregarProducto);
 
-    element.appendChild(tarjetaProducto);
+    elemento.appendChild(tarjetaProducto);
   });
 }
 
-function createPaginationControls(productos, element) {
-  const totalPages = Math.ceil(productos.length / itemsPerPage);
+function crearControlesPaginacion(productos, elemento) {
+  const paginasTotales = Math.ceil(productos.length / elementosPorPagina);
 
-  const paginationContainer = document.createElement("div");
-  paginationContainer.classList.add("pagination");
+  const contenedorPaginacion = document.createElement("div");
+  contenedorPaginacion.classList.add("paginacion");
 
-  for (let i = 1; i <= totalPages; i++) {
-    const button = document.createElement("button");
-    button.textContent = i;
-    button.classList.add("pagination__button");
+  for (let i = 1; i <= paginasTotales; i++) {
+    const boton = document.createElement("button");
+    boton.textContent = i;
+    boton.classList.add("paginacion__boton");
 
-    if (i === currentPage) {
-      button.classList.add("active");
+    if (i === paginaActual) {
+      boton.classList.add("active");
     }
 
-    button.addEventListener("click", () => {
-      currentPage = i;
-      renderPage(productos, element, currentPage);
-      updatePaginationButtons(paginationContainer, i);
+    boton.addEventListener("click", () => {
+      paginaActual = i;
+      renderizarPagina(productos, elemento, paginaActual);
+      actualizarBotonesPaginacion(contenedorPaginacion, i);
     });
 
-    paginationContainer.appendChild(button);
+    contenedorPaginacion.appendChild(boton);
   }
 
-  element.parentNode.appendChild(paginationContainer);
+  elemento.parentNode.appendChild(contenedorPaginacion);
 }
 
-function updatePaginationButtons(container, activePage) {
-  const buttons = container.querySelectorAll(".pagination__button");
-  buttons.forEach((button, index) => {
-    if (index + 1 === activePage) {
-      button.classList.add("active");
+function actualizarBotonesPaginacion(contenedor, paginaActivada) {
+  const botones = contenedor.querySelectorAll(".paginacion__boton");
+  botones.forEach((boton, i) => {
+    if (i + 1 === paginaActivada) {
+      boton.classList.add("active");
     } else {
-      button.classList.remove("active");
+      boton.classList.remove("active");
     }
   });
 }

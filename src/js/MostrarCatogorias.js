@@ -1,12 +1,12 @@
-import { ObtenerCategorias } from "../services/Categorias";
+import { obtenerCategorias } from "../services/Categorias";
 
-export async function MostrarCategorias(element) {
-  const categorias = await ObtenerCategorias();
+export async function mostrarCategorias(elemento) {
+  const categorias = await obtenerCategorias();
 
   categorias.forEach((categoria) => {
-    const option = document.createElement("option");
-    option.value = categoria;
-    option.textContent = categoria;
-    element.appendChild(option);
+    const opcion = document.createElement("option");
+    opcion.value = categoria;
+    opcion.textContent = categoria;
+    elemento.appendChild(opcion);
   });
 }
