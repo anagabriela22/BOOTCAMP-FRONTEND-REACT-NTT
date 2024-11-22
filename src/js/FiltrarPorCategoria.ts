@@ -1,8 +1,8 @@
 import { currentPage, productosGlobales, renderPage } from "./MostrarProductos";
 
 export function FiltrarPorCategoria(categoria: string): void {
-  const contenedor = document.querySelector("#productos") as HTMLElement;
-  const pagination = document.querySelector(".pagination") as HTMLElement;
+  const contenedor = document.querySelector<HTMLElement>("#productos");
+  const pagination = document.querySelector<HTMLElement>(".pagination");
 
   if (!contenedor || !pagination) {
     console.error(
@@ -33,9 +33,9 @@ export function FiltrarPorCategoria(categoria: string): void {
 }
 
 function SinCoincidencias(contenedor: HTMLElement): void {
-  let mensaje = document.querySelector(
+  let mensaje = document.querySelector<HTMLParagraphElement>(
     "#mensaje-sin-coincidencias"
-  ) as HTMLParagraphElement;
+  );
 
   if (!mensaje) {
     mensaje = document.createElement("p");
@@ -55,6 +55,7 @@ function SinCoincidencias(contenedor: HTMLElement): void {
   }
 }
 
+// el parametro no se usa
 function ConCoincidencias(contenedor: HTMLElement): void {
   const mensaje = document.querySelector("#mensaje-sin-coincidencias");
   if (mensaje) {

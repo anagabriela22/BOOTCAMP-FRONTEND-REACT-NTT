@@ -5,6 +5,7 @@ export function mapProduct(product: Producto) {
     id: product.id,
     name: product.title,
     price: product.price,
+    // estos valores podr'ian ser un enum
     availabilityStatus: product.stock > 0 ? "Disponible" : "Agotado",
     thumbnail: product.thumbnail,
     category: product.category,
