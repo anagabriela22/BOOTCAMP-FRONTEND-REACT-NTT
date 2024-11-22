@@ -1,12 +1,17 @@
 import { Producto } from "../models/Producto.type";
+enum Disponibilidad {
+  Disponible = "Disponible",
+  Agotado = "Agotado",
+}
 
-export function mapProduct(product: Producto) {
+export function mapProduct(producto: Producto) {
   return {
-    id: product.id,
-    name: product.title,
-    price: product.price,
-    availabilityStatus: product.stock > 0 ? "Disponible" : "Agotado",
-    thumbnail: product.thumbnail,
-    category: product.category,
+    id: producto.id,
+    name: producto.title,
+    price: producto.price,
+    availabilityStatus:
+    producto.stock > 0 ? Disponibilidad.Disponible : Disponibilidad.Agotado,
+    thumbnail: producto.thumbnail,
+    category: producto.category,
   };
 }

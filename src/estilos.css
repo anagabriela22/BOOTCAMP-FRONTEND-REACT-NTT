@@ -499,7 +499,7 @@
         font-size: 16px;
     }
 
-    .pagination {
+    .paginacion {
         width: 670px;
         margin: 0 auto;
         margin-top: 20px;
@@ -1154,26 +1154,26 @@
 }
 
 
-#buscador-mobil-container {
+#buscador-mobil-contenedor {
     width: 80%;
     margin: 10px auto;
 }
 
 
-#buscador-mobil-container .seccionNavBarPage__navbar-redes--second {
+#buscador-mobil-contenedor .seccionNavBarPage__navbar-redes--second {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
 
-#buscador-mobil-container .seccionNavBarPage__categorias {
+#buscador-mobil-contenedor .seccionNavBarPage__categorias {
     flex: 1;
     max-width: 200px;
 }
 
 
-#buscador-mobil-container .seccionNavBarPage__navbar--inputBoton {
+#buscador-mobil-contenedor .seccionNavBarPage__navbar--inputBoton {
     flex: 3;
     padding: 10px;
     width: 100%;
@@ -1184,13 +1184,13 @@
 }
 
 
-#buscador-mobil-container .seccionNavBarPage__navbar-icon--search {
+#buscador-mobil-contenedor .seccionNavBarPage__navbar-icon--search {
     cursor: pointer;
     color: #333;
     margin-left: 10px;
 }
 
-.pagination {
+.paginacion {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1198,7 +1198,7 @@
     margin-top: 20px;
 }
 
-.pagination__button {
+.paginacion__boton {
     padding: 10px 15px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
@@ -1208,7 +1208,7 @@
     text-align: center;
 }
 
-.pagination__button.active {
+.paginacion__boton.active {
     background-color: var(--color-hover);
     font-weight: 700;
     color: white;
@@ -1216,7 +1216,7 @@
     transition: all .25s ease-in-out;
 }
 
-.pagination__button:hover {
+.paginacion__boton:hover {
     background-color: var(--color-fondo);
     color: var(--color-primario);
     font-weight: 700;
@@ -1224,16 +1224,16 @@
 }
 
 @media (max-width: 768px) {
-    .pagination {
+    .paginacion {
         gap: 3px;
     }
 
-    .pagination__button {
+    .paginacion__boton {
         padding: 8px 10px;
         font-size: 14px;
     }
 
-    #buscador-mobil-container .seccionNavBarPage__navbar--inputBoton {
+    #buscador-mobil-contenedor .seccionNavBarPage__navbar--inputBoton {
         border-radius: 10px;
     }
 
@@ -1241,17 +1241,17 @@
         border-radius: 10px;
     }
 
-    #buscador-mobil-container .seccionNavBarPage__navbar-redes--second {
+    #buscador-mobil-contenedor .seccionNavBarPage__navbar-redes--second {
         gap: 0px;
     }
 }
 
 @media (max-width: 480px) {
-    .pagination {
+    .paginacion {
         gap: 2px;
     }
 
-    .pagination__button {
+    .paginacion__boton {
         padding: 6px 8px;
         font-size: 12px;
     }
