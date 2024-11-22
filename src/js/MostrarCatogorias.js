@@ -1,5 +1,6 @@
 import { ObtenerCategorias } from "../services/Categorias";
 
+// camel case
 export async function MostrarCategorias(element) {
   const categorias = await ObtenerCategorias();
 

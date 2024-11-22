@@ -21,6 +21,7 @@ export function renderPage(productos, element, page) {
 
   productosPagina.forEach((producto) => {
     const tarjetaProducto = document.createElement("div");
+    // un solo idioma
     tarjetaProducto.classList.add("seccionProductos__cards--Boxes");
     tarjetaProducto.setAttribute("data-categoria", producto.category);
 

@@ -1,3 +1,4 @@
+// eliminar código no usado
 /*
 import { setupCounter } from './counter.js'
 document.querySelector('#app').innerHTML = `  
