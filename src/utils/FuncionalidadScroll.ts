@@ -1,4 +1,4 @@
-export function ScrollSmooth(): void {
+export function funcionalidadScroll(): void {
   const toTopButton = document.getElementById("ui-to-top");
   if (!toTopButton) {
     console.error('No se encontro el botón con id "ui-to-top".');

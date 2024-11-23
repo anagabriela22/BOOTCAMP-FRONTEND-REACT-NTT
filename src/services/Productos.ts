@@ -1,8 +1,7 @@
-import { url_base } from "../../environment";
+import { url_base } from "../environment";
 import { Producto, ProductosResponse } from "../models/Producto.type";
 
 export async function obtenerProductos(): Promise<Producto[]> {
-
   const url = url_base + "/products?limit=0";
 
   const res = await fetch(url);

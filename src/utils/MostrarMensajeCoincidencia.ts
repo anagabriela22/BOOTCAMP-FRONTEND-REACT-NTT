@@ -1,9 +1,11 @@
-export function monstrarMensajeSinCoincidencias(contenedor: HTMLElement, ocultarProductos : boolean = false): void {
+export function monstrarMensajeSinCoincidencias(
+  contenedor: HTMLElement,
+  ocultarProductos: boolean = false
+): void {
   let mensaje = document.querySelector<HTMLParagraphElement>(
     "#mensaje-sin-coincidencias"
   );
 
-  // Crea el mensaje si no existe
   if (!mensaje) {
     mensaje = document.createElement("p");
     mensaje.id = "mensaje-sin-coincidencias";
@@ -20,27 +22,26 @@ export function monstrarMensajeSinCoincidencias(contenedor: HTMLElement, ocultar
       );
     }
   }
-  if(ocultarProductos){
-      Array.from(contenedor.children).forEach((producto) => {
-        (producto as HTMLElement).style.display = "none";
-      });
-
+  if (ocultarProductos) {
+    Array.from(contenedor.children).forEach((producto) => {
+      (producto as HTMLElement).style.display = "none";
+    });
   }
 }
-  
-export function ocultarMensajeSinCoincidencias(contenedor: HTMLElement, ocultarProductos : boolean = false): void {
+
+export function ocultarMensajeSinCoincidencias(
+  contenedor: HTMLElement,
+  ocultarProductos: boolean = false
+): void {
   const mensaje = document.querySelector("#mensaje-sin-coincidencias");
 
   if (mensaje) {
     mensaje.remove();
   }
 
-  if(ocultarProductos){
-      
+  if (ocultarProductos) {
     Array.from(contenedor.children).forEach((producto) => {
       (producto as HTMLElement).style.display = "";
     });
-
   }
 }
-  

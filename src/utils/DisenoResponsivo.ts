@@ -17,9 +17,7 @@ export function disenoResponsivo(): void {
         contenedorMobil.appendChild(buscador);
       }
     } else {
-      const contenedorPc = document.getElementById(
-        "buscador-pc-contenedor"
-      );
+      const contenedorPc = document.getElementById("buscador-pc-contenedor");
       if (contenedorPc && !contenedorPc.contains(buscador)) {
         contenedorPc.appendChild(buscador);
       }

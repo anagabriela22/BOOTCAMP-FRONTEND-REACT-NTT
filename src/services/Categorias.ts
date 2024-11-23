@@ -1,4 +1,4 @@
-import { url_base } from "../../environment";
+import { url_base } from "../environment";
 import { Categoria } from "../models/Categoria.type";
 
 export async function obtenerCategorias(): Promise<Categoria[]> {
