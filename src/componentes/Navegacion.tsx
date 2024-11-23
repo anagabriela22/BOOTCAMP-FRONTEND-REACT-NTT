@@ -1,3 +1,4 @@
+import Busqueda from "./Busqueda";
 import Carrito from "./Carrito";
 import Categorias from "./Categorias";
 
@@ -81,12 +82,7 @@ const Navegacion = () => {
           >
             <Categorias />
             <div className="seccionNavBarPage__navbar-redes--Buscador">
-              <input
-                id="caja-busqueda"
-                className="seccionNavBarPage__navbar--inputBoton"
-                type="text"
-                placeholder="Buscar..."
-              />
+              <Busqueda />
               <span className="seccionNavBarPage__navbar-icon--search fa-solid fa-magnifying-glass"></span>
             </div>
           </div>

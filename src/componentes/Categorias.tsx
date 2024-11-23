@@ -25,20 +25,13 @@ const Categorias = () => {
       return;
     }
 
+    //Filtrar
+
     establecerModoFiltro(true);
 
     establecerProductosFiltrados(
       productos.filter((producto) => producto.category === categoria)
     );
-
-    //paginacion.style.display = "none";
-    //ocultamos paginacion
-
-    if (productosFiltrados.length > 0) {
-      //Ocultar si hay mensaje error
-    } else {
-      //Mostrar si hay mensaje error (SIN COINCIDENCIAS)
-    }
   };
 
   useEffect(() => {
