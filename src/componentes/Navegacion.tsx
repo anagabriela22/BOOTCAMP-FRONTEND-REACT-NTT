@@ -63,10 +63,7 @@ const Navegacion = () => {
       </div>
 
       <div className="seccionNavBarPage__boxes seccionNavBarPage__box--second">
-        <div
-          id="buscador-pc-contenedor"
-          className="seccionNavBarPage__contenido-NavBarside--second"
-        >
+        <div className="seccionNavBarPage__contenido-NavBarside--second">
           <div className="seccionNavBarPage__navbar-redes--first">
             <img
               className="seccionNavBarPage__contenido--Logo"
@@ -76,16 +73,23 @@ const Navegacion = () => {
               height="67"
             />
           </div>
+
           <div
-            id="buscador"
+            id="buscador-pc-contenedor"
             className="seccionNavBarPage__navbar-redes--second"
           >
-            <Categorias />
-            <div className="seccionNavBarPage__navbar-redes--Buscador">
-              <Busqueda />
-              <span className="seccionNavBarPage__navbar-icon--search fa-solid fa-magnifying-glass"></span>
+            <div
+              id="buscador"
+              className="seccionNavBarPage__navbar-redes--second"
+            >
+              <Categorias />
+              <div className="seccionNavBarPage__navbar-redes--Buscador">
+                <Busqueda />
+                <span className="seccionNavBarPage__navbar-icon--search fa-solid fa-magnifying-glass"></span>
+              </div>
             </div>
           </div>
+
           <div className="seccionNavBarPage__navbar-redes--third">
             <div className="seccionNavBarPage__navbar-redes--logincompra">
               <span className="seccionNavBarPage__navbar-icon--login lnr lnr-user"></span>
