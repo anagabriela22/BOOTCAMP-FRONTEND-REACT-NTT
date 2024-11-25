@@ -1,8 +1,19 @@
 import Busqueda from "./Busqueda";
 import Carrito from "./Carrito";
 import Categorias from "./Categorias";
+interface NavegacionProps {
+  ocultarControles: boolean;
+}
+import "../css/principal/Navegacion.css";
+import { useNavigate } from "react-router-dom";
 
-const Navegacion = () => {
+const Navegacion = ({ ocultarControles }: NavegacionProps) => {
+  const navigate = useNavigate();
+
+  const irAPrincipal = () => {
+    navigate("/");
+  };
+
   return (
     <div className="seccionNavBarPage">
       <div className="seccionNavBarPage__boxes seccionNavBarPage__box--first">
@@ -74,28 +85,40 @@ const Navegacion = () => {
             />
           </div>
 
-          <div
-            id="buscador-pc-contenedor"
-            className="seccionNavBarPage__navbar-redes--second"
-          >
-            <div
-              id="buscador"
-              className="seccionNavBarPage__navbar-redes--second"
-            >
-              <Categorias />
-              <div className="seccionNavBarPage__navbar-redes--Buscador">
-                <Busqueda />
-                <span className="seccionNavBarPage__navbar-icon--search fa-solid fa-magnifying-glass"></span>
-              </div>
-            </div>
-          </div>
+          {/* MOSTRAR/OCULTAR CONTROLES EN PAGINA RESUMEN */}
 
-          <div className="seccionNavBarPage__navbar-redes--third">
-            <div className="seccionNavBarPage__navbar-redes--logincompra">
-              <span className="seccionNavBarPage__navbar-icon--login lnr lnr-user"></span>
-              <Carrito />
+          {ocultarControles && (
+            <div className="resumen-volver-contenedor">
+              <a onClick={() => irAPrincipal()}>Seguir comprando</a>
             </div>
-          </div>
+          )}
+
+          {!ocultarControles && (
+            <>
+              <div
+                id="buscador-pc-contenedor"
+                className="seccionNavBarPage__navbar-redes--second"
+              >
+                <div
+                  id="buscador"
+                  className="seccionNavBarPage__navbar-redes--second"
+                >
+                  <Categorias />
+                  <div className="seccionNavBarPage__navbar-redes--Buscador">
+                    <Busqueda />
+                    <span className="seccionNavBarPage__navbar-icon--search fa-solid fa-magnifying-glass"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="seccionNavBarPage__navbar-redes--third">
+                <div className="seccionNavBarPage__navbar-redes--logincompra">
+                  <span className="seccionNavBarPage__navbar-icon--login lnr lnr-user"></span>
+                  <Carrito />
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div id="buscador-mobil-contenedor" className=""></div>

@@ -1,0 +1,15 @@
+.resumen-volver-contenedor{
+ 
+    width: 100%;
+
+}
+
+.resumen-volver-contenedor a{
+    font-family: Arial, sans-serif !important;
+ 
+    color: black;
+    margin-top: 20px;
+    display: block;
+    cursor: pointer;
+  
+}

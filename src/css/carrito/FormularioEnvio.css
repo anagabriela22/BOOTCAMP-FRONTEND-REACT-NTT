@@ -1,0 +1,36 @@
+.formulario-envio {
+    margin-top: 20px;
+  }
+  
+  .formulario-envio form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .formulario-envio input, .formulario-envio select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+.btn-comprar {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.contro-formulario-envio{
+  display: flex;
+  flex-direction: column;
+}
+
+.contro-formulario-envio .error{
+  color: red;
+}

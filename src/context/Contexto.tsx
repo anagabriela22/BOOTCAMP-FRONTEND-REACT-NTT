@@ -1,63 +1,37 @@
-import React, { createContext, useState, ReactNode } from "react";
-import { Producto } from "../models/Producto.type";
+import React, { createContext, ReactNode, useEffect, useReducer } from "react";
+import { reducer, estadoInicial, EstadoApp, Accion } from "./Reducer";
 
-// Define la estructura del estado del carrito
 export interface ContextoProps {
-  carritoContador: number;
-  incrementarCarritoContador: () => void;
-
-  productos: Producto[];
-  establecerProductos: React.Dispatch<React.SetStateAction<Producto[]>>;
-
-  productosFiltrados: Producto[];
-  establecerProductosFiltrados: React.Dispatch<
-    React.SetStateAction<Producto[]>
-  >;
-
-  modoFiltro: Boolean;
-  establecerModoFiltro: React.Dispatch<React.SetStateAction<Boolean>>;
+  state: EstadoApp;
+  dispatch: React.Dispatch<Accion>;
 }
 
 export const contextoApp = createContext<ContextoProps>({
-  carritoContador: 0,
-  incrementarCarritoContador() {},
-
-  productos: [],
-  establecerProductos() {},
-
-  productosFiltrados: [],
-  establecerProductosFiltrados() {},
-
-  modoFiltro: false,
-  establecerModoFiltro() {},
+  state: estadoInicial,
+  dispatch: () => null,
 });
 
-// Proveedor del contexto
 export const ContextoProveedor: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [carritoContador, setCarritoContador] = useState<number>(0);
-  const [productos, setProductos] = useState<Producto[]>([]);
-  const [productosFiltrados, setProductosFiltrados] = useState<Producto[]>([]);
-  const [modoFiltro, setModoFiltro] = useState<Boolean>(false);
+  //const [state, dispatch] = useReducer(reducer, estadoInicial);
 
-  const incrementarCarritoContador = () => {
-    setCarritoContador((prev) => prev + 1);
-  };
+  // Recuperar el estado desde localStorage
+  const estadoGuardado = localStorage.getItem("estadoApp");
+  const estadoInicialPersistente = estadoGuardado
+    ? JSON.parse(estadoGuardado)
+    : estadoInicial;
+
+  const [state, dispatch] = useReducer(reducer, estadoInicialPersistente);
+
+  // Guardar el estado en localStorage cada vez que cambie
+
+  useEffect(() => {
+    localStorage.setItem("estadoApp", JSON.stringify(state));
+  }, [state]);
 
   return (
-    <contextoApp.Provider
-      value={{
-        carritoContador: carritoContador,
-        incrementarCarritoContador: incrementarCarritoContador,
-        productos: productos,
-        establecerProductos: setProductos,
-        productosFiltrados: productosFiltrados,
-        establecerProductosFiltrados: setProductosFiltrados,
-        modoFiltro: modoFiltro,
-        establecerModoFiltro: setModoFiltro,
-      }}
-    >
+    <contextoApp.Provider value={{ state, dispatch }}>
       {children}
     </contextoApp.Provider>
   );

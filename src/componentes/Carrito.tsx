@@ -1,17 +1,32 @@
 import { useContext } from "react";
 import { contextoApp } from "../context/Contexto";
+import { useNavigate } from "react-router-dom";
 
 const Carrito = () => {
-  const { carritoContador } = useContext(contextoApp);
+  const { state } = useContext(contextoApp);
+
+  const { productosCarrito } = state;
+  const navigate = useNavigate();
+
+  const irResumen = () => {
+    navigate("/resumen");
+  };
+
   return (
-    <div>
-      <span className="seccionNavBarPage__navbar-icon--carrito lnr lnr-cart">
+    <div role="button">
+      <span
+        className="seccionNavBarPage__navbar-icon--carrito lnr lnr-cart"
+        role="button"
+        onClick={() => {
+          irResumen();
+        }}
+      >
         <span
           id="contador-carrito"
           className="seccionNavBarPage__navbar-icon--carrito-numero"
-          style={{ display: carritoContador > 0 ? "flex" : "none" }}
+          style={{ display: productosCarrito.length > 0 ? "flex" : "none" }}
         >
-          {carritoContador}
+          {productosCarrito.length}
         </span>
       </span>
     </div>

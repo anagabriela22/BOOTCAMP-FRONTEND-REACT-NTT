@@ -6,12 +6,10 @@ import Paginacion from "./Paginacion";
 import { contextoApp } from "../context/Contexto";
 
 export const Productos = () => {
-  const {
-    productosFiltrados,
-    establecerProductos,
-    establecerProductosFiltrados,
-    modoFiltro,
-  } = useContext(contextoApp);
+  const { state, dispatch } = useContext(contextoApp);
+
+  const { productosFiltrados, modoFiltro } = state;
+
   const [paginaActual, setPaginaActual] = useState<number>(1);
 
   const elementosPorPagina = 10;
@@ -20,8 +18,15 @@ export const Productos = () => {
     const cargarProductos = async () => {
       try {
         const productosObtenidos = await obtenerProductos();
-        establecerProductos(productosObtenidos);
-        establecerProductosFiltrados(productosObtenidos);
+
+        dispatch({
+          type: "ESTABLECER_PRODUCTOS",
+          payload: productosObtenidos,
+        });
+        dispatch({
+          type: "ESTABLECER_PRODUCTOS_FILTRADOS",
+          payload: productosObtenidos,
+        });
       } catch (error) {
         console.error("Error al obtener los productos:", error);
       }

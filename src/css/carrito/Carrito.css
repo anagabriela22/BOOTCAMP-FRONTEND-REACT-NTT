@@ -1,0 +1,38 @@
+.carrito-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .carrito-titulo{
+    color: red;
+  }
+  
+  .carrito-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .carrito-left {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .carrito-right {
+    flex: 1;
+    min-width: 250px;
+
+  }
+
+  @media (max-width: 768px) {
+    .carrito-content {
+      flex-direction: column;
+    }
+  
+    .carrito-left,
+    .carrito-right {
+      flex: none; 
+      width: 100%;
+    }
+  }

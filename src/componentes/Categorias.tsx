@@ -5,33 +5,40 @@ import { contextoApp } from "../context/Contexto";
 const Categorias = () => {
   const [categorias, setCategorias] = useState<string[]>([]);
 
-  const {
-    productosFiltrados,
-    productos,
-    establecerProductosFiltrados,
-    establecerModoFiltro,
-  } = useContext(contextoApp);
+  const { state, dispatch } = useContext(contextoApp);
 
+  const { productos } = state;
   const categoriaTodos = "all";
 
   const filtrarPorCategoria = (categoria: string) => {
     if (categoria == categoriaTodos) {
-      establecerProductosFiltrados(productos);
-      establecerModoFiltro(false);
+      dispatch({
+        type: "ESTABLECER_PRODUCTOS_FILTRADOS",
+        payload: productos,
+      });
 
-      //paginacion.style.display = "flex";
-      //Mostrar paginacion
-      //Ocultar si hay mensaje error
+      dispatch({
+        type: "ESTABLECER_MODO_FILTRO",
+        payload: false,
+      });
       return;
     }
 
     //Filtrar
 
-    establecerModoFiltro(true);
+    dispatch({
+      type: "ESTABLECER_MODO_FILTRO",
+      payload: true,
+    });
 
-    establecerProductosFiltrados(
-      productos.filter((producto) => producto.category === categoria)
+    let nuevosProductosFiltrados = productos.filter(
+      (producto) => producto.category === categoria
     );
+
+    dispatch({
+      type: "ESTABLECER_PRODUCTOS_FILTRADOS",
+      payload: nuevosProductosFiltrados,
+    });
   };
 
   useEffect(() => {

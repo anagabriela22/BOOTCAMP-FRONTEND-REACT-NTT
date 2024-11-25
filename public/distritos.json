@@ -1,0 +1,12 @@
+[
+  { "id": "1", "nombre": "Cercado de Lima" },
+  { "id": "2", "nombre": "San Isidro" },
+  { "id": "3", "nombre": "Miraflores" },
+  { "id": "4", "nombre": "Surco" },
+  { "id": "5", "nombre": "Callao" },
+  { "id": "6", "nombre": "Arequipa" },
+  { "id": "7", "nombre": "Cusco" },
+  { "id": "8", "nombre": "Trujillo" },
+  { "id": "9", "nombre": "Piura" },
+  { "id": "10", "nombre": "Chiclayo" }
+]
