@@ -1,15 +1,15 @@
-.seccionNavBarPage__resumen-volver-contenedor{   
+.seccionNavBarPage__resumen-volver-contenedor {
     position: absolute;
     right: 0;
     top: 0;
     padding: 10px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
-.seccionNavBarPage__resumen-volver-contenedor a{
+.seccionNavBarPage__resumen-volver-contenedor a {
     font-family: Arial, sans-serif !important;
     color: black;
-   font-weight: 600;
+    font-weight: 600;
     display: block;
     cursor: pointer;
 
@@ -19,27 +19,26 @@
     display: flex;
     justify-content: center;
     height: 75px;
-    margin-top: 10px;
-   
 }
 
-.seccionNavBarPage__boxes-carrito .seccionNavBarPage__navbar-redes--first{
-    margin: 0 auto;    
+.seccionNavBarPage__boxes-carrito .seccionNavBarPage__navbar-redes--first {
+    margin: 0 auto;
 }
 
 .seccionNavBarPage__contenido-NavBarside--second-carrito {
     width: 100%;
-    height: 100%; 
+    height: 75px;
     display: flex;
-    justify-content: space-between; 
-  
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 
 
 @media (max-width: 768px) {
     .seccionNavBarPage__resumen-volver-contenedor a {
-      font-size: 12px;
+        font-size: 12px;
     }
-  
-  }
+
+}

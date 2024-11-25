@@ -1,41 +1,43 @@
-.tabla-productos{
-  overflow-x: auto; 
+.tabla-productos {
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .tabla-productos_tabla {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .tabla-productos th, .tabla-productos td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .tabla-productos img {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .tabla-productos_btn-eliminar {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
- 
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  .tabla-productos_btn-contador{
-    background-color: black;
-    border-radius: 50%;
-    border: none;
-    width: 20px;
-    height: 23px;
-    color: white;
-  }
+.tabla-productos th,
+.tabla-productos td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
 
-  
+.tabla-productos img {
+  width: 50px;
+  height: 50px;
+}
+
+.tabla-productos_btn-eliminar {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+
+.tabla-productos_btn-contador {
+  background-color: #000;
+  border-radius: 50%;
+  border: none;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  margin: 0px 3px;
+  cursor: pointer;
+  font-weight: 700;
+}

@@ -1006,6 +1006,7 @@
     text-decoration: none;
     border-radius: 50%;
     transition: .3s all ease-in-out;
+    cursor: pointer;
 }
 
 .seccionAnclaBoton::before {
