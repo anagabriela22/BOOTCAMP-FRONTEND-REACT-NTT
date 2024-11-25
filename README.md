@@ -1,6 +1,6 @@
 # Market App
 
-## Descripción del proyecto (Rama `feature/react-fundamentos`)
+## Descripción del proyecto (Rama `feature/react-implementacion`)
 
 Este proyecto es una aplicación creada con React + Typescript + Vite. La funcionalidad principal incluye:
 
@@ -9,8 +9,9 @@ Este proyecto es una aplicación creada con React + Typescript + Vite. La funcio
 - **Filtro por categorías**: Muestra productos según la categoría seleccionada.
 - **Carrito dinamico**: Incrementa el contador en el menú superior al agregar productos.
 - **Diseño responsivo**: Adaptado a diferentes dispositivos (Mobil, Tablet y Pc).
+- **Pagina resumen**: Se visualizara el detalle de tu carrito de compras.
 
-La rama `feature/react-fundamentos` contiene estas implementaciones.
+La rama `feature/react-implementacion` contiene estas implementaciones.
 
 ## Instalación y ejecución local
 
@@ -18,7 +19,7 @@ La rama `feature/react-fundamentos` contiene estas implementaciones.
    git clone <https://github.com/anagabriela22/BOOTCAMP-FRONTEND-REACT-NTT>
 
 2. **Cambia a la rama correspondiente**:
-git checkout feature/react-fundamentos
+git checkout feature/react-implementacion
 
 3. **Instala las dependencias**:
 npm install
@@ -28,12 +29,17 @@ npm run dev
 
 ## Arquitectura de carpetas
 
+public
+├── distritos.js/               # Datos de distritos para el formulario de envio
 src/
 ├── assets/                     # Recursos estaticos (imagenes, íconos, etc.)
 │   └── [imagenes...]
 ├── componentes/                # Componentes reutilizables de React
+│   ├── Carrito/
+        └── [componentes]
 │   ├── Banner.tsx
 │   ├── BotonScroll.tsx
+│   ├── Busqueda.tsx
 │   ├── Carrito.tsx
 │   ├── Categorias.tsx
 │   ├── Footer.tsx
@@ -44,21 +50,30 @@ src/
 │   └── TarjetaProducto.tsx
 ├── context/                    # Contextos para manejo de estados globales
 │   └── Contexto.tsx
-├── utils/                      # Utilidades generales
-│   ├── DisenoResponsivo.ts
-│   ├── FuncionalidadScroll.ts
-│   └── MostrarMensajeCoincidencia.ts
-├── services/                   # Interacción con APIs externas
-│   ├── Categorias.ts
-│   └── Productos.ts
+│   └── Reducer.tsx
+├── css/                        # Estilos para la aplicacion
+│   └── carrito/
+        └── [estilos]
+│   └── principal/
+        └── [estilos]
 ├── mappers/                    # Transformaciones de datos
 │   └── Producto.mapper.ts
 ├── models/                     # Tipos y modelos de datos
 │   ├── Categoria.type.ts
 │   └── Productos.type.ts
-├── estilos.css                 # Archivo de estilos (CSS)
-├── index.html                  # Archivo principal HTML
-├── main.tsx                    # Punto de entrada de React
+├── services/                   # Interacción con APIs externas
+│   ├── Categorias.ts
+│   └── Productos.ts
+├── utils/                      # Utilidades generales
+│   ├── DisenoResponsivo.ts
+│   ├── FuncionalidadScroll.ts
+│   └── MostrarMensajeCoincidencia.ts
+├── views/                      # Vistas de la aplicacion
+│   ├── CarritoView.ts
+│   ├── PrincipalView.ts
 ├── App.tsx                     # Componente raíz de la aplicación
-├── tsconfig.json               # Configuración de TypeScript
-├── vite.config.ts              # Configuración de Vite
+├── Environment.tsx             # Variables globales de la aplicacion
+├── main.tsx                    # Punto de entrada de React
+├── rutas.tsx                   # Rutas de la aplicacion
+tsconfig.json                   # Configuración de TypeScript
+vite.config.ts                  # Configuración de Vite
