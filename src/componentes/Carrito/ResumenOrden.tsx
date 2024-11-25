@@ -17,15 +17,15 @@ const ResumenOrden = () => {
   return (
     <div className="resumen-orden">
       <h2>Resumen de la Orden</h2>
-      <div className="resumen-item">
+      <div className="resumen-orden_item">
         <span>Subtotal</span>
         <span>S/ {obtenePrecioTotal()}</span>
       </div>
-      <div className="resumen-item">
+      <div className="resumen-orden_item">
         <span>Gastos de envío</span>
         <span>Gratis</span>
       </div>
-      <div className="resumen-total">
+      <div className="resumen-orden_total">
         <span>Total</span>
         <span>S/ {obtenePrecioTotal()}</span>
       </div>

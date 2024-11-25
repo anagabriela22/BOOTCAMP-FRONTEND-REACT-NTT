@@ -7,14 +7,14 @@ import "../css/carrito/Carrito.css";
 const CarritoView = () => {
   return (
     <>
-      <Navegacion ocultarControles={true}></Navegacion>
+      <Navegacion ocultarControles={true} ocultarContactos={true}></Navegacion>
       <div className="carrito-container">
-        <h1 className="carrito-titulo">Mi Carrito</h1>
-        <div className="carrito-content">
-          <div className="carrito-left">
+        <h1 className="carrito-container_titulo">Mi Carrito</h1>
+        <div className="carrito-container_contenido">
+          <div className="carrito-container_izqu">
             <TablaProductos />
           </div>
-          <div className="carrito-right">
+          <div className="carrito-container_derec">
             <ResumenOrden />
           </div>
         </div>

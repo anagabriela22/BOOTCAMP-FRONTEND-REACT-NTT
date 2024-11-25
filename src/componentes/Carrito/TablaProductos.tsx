@@ -1,12 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import "../../css/carrito/TablaProductos.css";
 import { contextoApp } from "../../context/Contexto";
-import { Producto } from "../../models/Producto.type";
 import { ProductoCarrito } from "../../models/ProductoCarrito.type";
 
 const TablaProductos = () => {
-  // const { productosCarrito, establecerProductosCarrito } =
-  //   useContext(contextoApp);
   const { state, dispatch } = useContext(contextoApp);
   const { productosCarrito } = state;
 
@@ -53,7 +50,7 @@ const TablaProductos = () => {
 
   return (
     <div className="tabla-productos">
-      <table>
+      <table className="tabla-productos_tabla">
         <thead>
           <tr>
             <th>Producto</th>
@@ -77,11 +74,17 @@ const TablaProductos = () => {
               <td>{`$${producto.producto.price.toFixed(2)}`}</td>
               {
                 <td>
-                  <button onClick={() => decrementarCantidad(producto)}>
+                  <button
+                    className="tabla-productos_btn-contador"
+                    onClick={() => decrementarCantidad(producto)}
+                  >
                     -
                   </button>
                   {producto.cantidad}
-                  <button onClick={() => incrementarCantidad(producto)}>
+                  <button
+                    className="tabla-productos_btn-contador"
+                    onClick={() => incrementarCantidad(producto)}
+                  >
                     +
                   </button>
                 </td>
@@ -89,7 +92,7 @@ const TablaProductos = () => {
               <td>{`$${obtenerPrecioPorCantidad(producto)}`}</td>
               <td>
                 <button
-                  className="eliminar"
+                  className="tabla-productos_btn-eliminar"
                   onClick={() => {
                     eliminarProductoDeCarrito(producto);
                   }}

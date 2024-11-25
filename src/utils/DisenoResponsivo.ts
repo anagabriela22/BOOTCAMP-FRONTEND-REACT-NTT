@@ -1,6 +1,7 @@
 export function disenoResponsivo(): void {
   const buscador = document.getElementById("buscador");
   const contenedorMobil = document.getElementById("buscador-mobil-contenedor");
+  const contenedorPc = document.getElementById("buscador-pc-contenedor");
 
   if (!buscador || !contenedorMobil) {
     console.error(
@@ -14,11 +15,12 @@ export function disenoResponsivo(): void {
   const manejador = () => {
     if (esTelefono.matches) {
       if (contenedorMobil && !contenedorMobil.contains(buscador)) {
+        contenedorPc?.removeChild(buscador);
         contenedorMobil.appendChild(buscador);
       }
     } else {
-      const contenedorPc = document.getElementById("buscador-pc-contenedor");
-      if (contenedorPc && !contenedorPc.contains(buscador)) {
+      if (contenedorPc && !contenedorPc.querySelector("#buscador")) {
+        contenedorMobil.removeChild(buscador);
         contenedorPc.appendChild(buscador);
       }
     }

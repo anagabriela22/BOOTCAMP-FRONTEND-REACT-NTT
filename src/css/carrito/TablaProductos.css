@@ -1,4 +1,9 @@
-.tabla-productos table {
+.tabla-productos{
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabla-productos_tabla {
     width: 100%;
     border-collapse: collapse;
   }
@@ -14,7 +19,7 @@
     height: 50px;
   }
   
-  .eliminar {
+  .tabla-productos_btn-eliminar {
     background-color: red;
     color: white;
     border: none;
@@ -22,8 +27,15 @@
     cursor: pointer;
   }
   
-  .precio-total{
-    margin-top: 30px;
-    color: red;
-    text-align: right;
+ 
+
+  .tabla-productos_btn-contador{
+    background-color: black;
+    border-radius: 50%;
+    border: none;
+    width: 20px;
+    height: 23px;
+    color: white;
   }
+
+  

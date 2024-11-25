@@ -14,23 +14,24 @@
     border-radius: 4px;
   }
   
-.btn-comprar {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-
-.contro-formulario-envio{
-  display: flex;
-  flex-direction: column;
-}
-
-.contro-formulario-envio .error{
-  color: red;
-}
+  
+  
+  .formulario-envio_control{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formulario-envio_control_error{
+    color: red;
+  }
+  
+  .formulario-envio_btn-comprar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }

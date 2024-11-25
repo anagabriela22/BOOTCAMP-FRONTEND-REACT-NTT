@@ -42,8 +42,10 @@
 .seccionNavBarPage__contenido-NavBarside--second {
     display: flex;
     justify-content: center;
-    gap: 90px;
+    gap: 90px; 
 }
+
+
 
 .seccionNavBarPage__navbar-redes--second {
     display: flex;
@@ -74,6 +76,7 @@
     justify-content: center;
     align-items: center;
     height: 75px;
+
 }
 
 .seccionNavBarPage__box--first {

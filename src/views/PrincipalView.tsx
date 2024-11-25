@@ -11,6 +11,7 @@ import { Servicios } from "../componentes/Servicios";
 import { BotonScroll } from "../componentes/BotonScroll";
 
 import "../css/principal/Principal.css";
+
 const PrincipalView = () => {
   useEffect(() => {
     funcionalidadScroll();
@@ -19,7 +20,7 @@ const PrincipalView = () => {
 
   return (
     <>
-      <Navegacion ocultarControles={false} />
+      <Navegacion ocultarControles={false} ocultarContactos={false} />
       <Banner />
       <Productos />
       <Servicios />

@@ -100,7 +100,7 @@ const FormularioEnvio = () => {
     <div className="formulario-envio">
       <h2>Información de Envío</h2>
       <form onSubmit={manejarSubmit}>
-        <div className="contro-formulario-envio">
+        <div className="formulario-envio_control">
           <input
             type="text"
             name="nombres"
@@ -108,9 +108,13 @@ const FormularioEnvio = () => {
             value={formulario.nombres}
             onChange={manejarCambio}
           />
-          {errores.nombres && <span className="error">{errores.nombres}</span>}
+          {errores.nombres && (
+            <span className="formulario-envio_control_error">
+              {errores.nombres}
+            </span>
+          )}
         </div>
-        <div className="contro-formulario-envio">
+        <div className="formulario-envio_control">
           <input
             type="text"
             name="apellidos"
@@ -119,10 +123,12 @@ const FormularioEnvio = () => {
             onChange={manejarCambio}
           />
           {errores.apellidos && (
-            <span className="error">{errores.apellidos}</span>
+            <span className="formulario-envio_control_error">
+              {errores.apellidos}
+            </span>
           )}
         </div>
-        <div className="contro-formulario-envio">
+        <div className="formulario-envio_control">
           <select
             name="distrito"
             value={formulario.distrito}
@@ -136,10 +142,12 @@ const FormularioEnvio = () => {
             ))}
           </select>
           {errores.distrito && (
-            <span className="error">{errores.distrito}</span>
+            <span className="formulario-envio_control_error">
+              {errores.distrito}
+            </span>
           )}
         </div>
-        <div className="contro-formulario-envio">
+        <div className="formulario-envio_control">
           <input
             type="text"
             name="direccion"
@@ -148,10 +156,12 @@ const FormularioEnvio = () => {
             onChange={manejarCambio}
           />
           {errores.direccion && (
-            <span className="error">{errores.direccion}</span>
+            <span className="formulario-envio_control_error">
+              {errores.direccion}
+            </span>
           )}
         </div>
-        <div className="contro-formulario-envio">
+        <div className="formulario-envio_control">
           <input
             type="text"
             name="referencia"
@@ -160,10 +170,12 @@ const FormularioEnvio = () => {
             onChange={manejarCambio}
           />
           {errores.referencia && (
-            <span className="error">{errores.referencia}</span>
+            <span className="formulario-envio_control_error">
+              {errores.referencia}
+            </span>
           )}
         </div>
-        <div className="contro-formulario-envio">
+        <div className="formulario-envio_control">
           <input
             type="tel"
             name="celular"
@@ -171,9 +183,13 @@ const FormularioEnvio = () => {
             value={formulario.celular}
             onChange={manejarCambio}
           />
-          {errores.celular && <span className="error">{errores.celular}</span>}
+          {errores.celular && (
+            <span className="formulario-envio_control_error">
+              {errores.celular}
+            </span>
+          )}
         </div>
-        <button type="submit" className="btn-comprar">
+        <button type="submit" className="formulario-envio_btn-comprar">
           Comprar
         </button>
       </form>

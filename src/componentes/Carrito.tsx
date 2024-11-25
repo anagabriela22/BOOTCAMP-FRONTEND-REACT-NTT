@@ -13,10 +13,9 @@ const Carrito = () => {
   };
 
   return (
-    <div role="button">
+    <div>
       <span
         className="seccionNavBarPage__navbar-icon--carrito lnr lnr-cart"
-        role="button"
         onClick={() => {
           irResumen();
         }}

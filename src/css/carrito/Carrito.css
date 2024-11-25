@@ -3,35 +3,35 @@
     font-family: Arial, sans-serif;
   }
 
-  .carrito-titulo{
+  .carrito-container_titulo{
     color: red;
   }
   
-  .carrito-content {
+  .carrito-container_contenido {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
   }
   
-  .carrito-left {
+  .carrito-container_izqu {
     flex: 2;
     min-width: 300px;
   }
   
-  .carrito-right {
+  .carrito-container_derec {
     flex: 1;
     min-width: 250px;
 
   }
 
   @media (max-width: 768px) {
-    .carrito-content {
+    .carrito-container_contenido {
       flex-direction: column;
     }
   
-    .carrito-left,
-    .carrito-right {
+    .carrito-container_izqu,
+    .carrito-container_derec {
       flex: none; 
       width: 100%;
     }
