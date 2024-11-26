@@ -33,11 +33,7 @@ export const Busqueda = () => {
       const descripcion = producto.description?.toLowerCase() || "";
       const categoria = producto.category.toLowerCase();
 
-      return (
-        titulo.includes(filtro) ||
-        descripcion.includes(filtro) ||
-        categoria.includes(filtro)
-      );
+      return [titulo, descripcion, categoria].includes(filtro);
     });
 
     dispatch({

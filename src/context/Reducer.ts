@@ -42,11 +42,13 @@ export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
       return { ...state, modoFiltro: action.payload };
 
     case "AGREGAR_AL_CARRITO": {
+      // no usemos abreviaciones y usemos destructuracion
       const productoExistente = state.productosCarrito.find(
-        (p) => p.producto.id === action.payload.producto.id
+        ({ producto }) => producto.id === action.payload.producto.id
       );
 
       if (productoExistente) {
+        // no usemos abreviaciones (p)
         return {
           ...state,
           productosCarrito: state.productosCarrito.map((p) =>
@@ -74,6 +76,7 @@ export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
     case "ACTUALIZAR_CANTIDAD":
       return {
         ...state,
+        // igual aqu'i
         productosCarrito: state.productosCarrito.map((p) =>
           p.producto.id === action.payload.id
             ? { ...p, cantidad: action.payload.cantidad }

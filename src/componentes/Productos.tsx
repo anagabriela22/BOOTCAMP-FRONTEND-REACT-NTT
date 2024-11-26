@@ -10,8 +10,10 @@ export const Productos = () => {
 
   const { productosFiltrados, modoFiltro } = state;
 
+  // no usemos n'umeros m'agicos usemos constantes
   const [paginaActual, setPaginaActual] = useState<number>(1);
 
+  // valor constantes deben ir fuera del componente
   const elementosPorPagina = 10;
 
   useEffect(() => {
@@ -37,7 +39,9 @@ export const Productos = () => {
   }, []);
   let productosPagina = [];
 
-  if (modoFiltro == false) {
+  // usemos el triple igual
+  if (modoFiltro === false) {
+    // mucha l'ogica debe estar encapsulado
     productosPagina = productosFiltrados.slice(
       (paginaActual - 1) * elementosPorPagina,
       paginaActual * elementosPorPagina

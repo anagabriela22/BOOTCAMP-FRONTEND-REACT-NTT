@@ -8,12 +8,13 @@ const TablaProductos = () => {
   const { productosCarrito } = state;
 
   const decrementarCantidad = (productoCarrito: ProductoCarrito) => {
+    // no usemos abreviaciones
     const productoEncontrado = productosCarrito.find(
       (p) => p.producto.id == productoCarrito.producto.id
     );
     if (productoEncontrado == null) return;
 
-    let nuevaCantidad = productoEncontrado.cantidad - 1;
+    const nuevaCantidad = productoEncontrado.cantidad - 1;
 
     if (nuevaCantidad < 1) return;
 
@@ -27,7 +28,7 @@ const TablaProductos = () => {
   };
 
   const incrementarCantidad = (productoCarrito: ProductoCarrito) => {
-    let nuevaCantidad = productoCarrito.cantidad + 1;
+    const nuevaCantidad = productoCarrito.cantidad + 1;
 
     dispatch({
       type: "ACTUALIZAR_CANTIDAD",

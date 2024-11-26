@@ -22,6 +22,7 @@ const TarjetaProducto = ({ producto }: TarjetaProductoProps) => {
   };
 
   const estaEnCarrito = (producto: Producto) => {
+    // no abreviaciones
     const productoEncontrado = productosCarrito.find(
       (p) => p.producto.id == producto.id
     );

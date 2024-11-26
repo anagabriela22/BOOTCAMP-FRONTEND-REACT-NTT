@@ -4,6 +4,7 @@ export const Footer = () => (
       <div className="seccionFooter__boxes seccionFooter__boxes--first">
         <div className="seccionFooter__subbox seccionFooter__box--first">
           <p className="seccionFooter__Servicios">Lo Que Ofrecemos</p>
+          {/* todo esto podr'ia estar en un array */}
           <ul className="seccionFooter__ListaOfrecer">
             <li>
               <a href="#">Celulares</a>
@@ -28,6 +29,7 @@ export const Footer = () => (
         <div className="seccionFooter__subbox seccionFooter__box--second">
           <p className="seccionFooter__Servicios">Información</p>
           <ul className="seccionFooter__ListaOfrecer">
+            {/* todo esto podr'ia estar en un array */}
             <li>
               <a href="#">Nosotros</a>
             </li>

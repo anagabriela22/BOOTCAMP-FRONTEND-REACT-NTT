@@ -9,6 +9,7 @@ const Carrito = () => {
   const navigate = useNavigate();
 
   const irResumen = () => {
+    // usemos un enum
     navigate("/resumen");
   };
 

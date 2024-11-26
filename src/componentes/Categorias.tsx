@@ -31,7 +31,7 @@ const Categorias = () => {
       payload: true,
     });
 
-    let nuevosProductosFiltrados = productos.filter(
+    const nuevosProductosFiltrados = productos.filter(
       (producto) => producto.category === categoria
     );
 
@@ -61,7 +61,7 @@ const Categorias = () => {
       id="categorias"
       className="seccionNavBarPage__categorias"
       onChange={(evento) => {
-        let categoria = evento.target.value;
+        const categoria = evento.target.value;
 
         filtrarPorCategoria(categoria);
       }}
