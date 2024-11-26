@@ -7,7 +7,8 @@ import "../css/carrito/Carrito.css";
 const CarritoView = () => {
   return (
     <>
-      <Navegacion ocultarControles={true} ocultarContactos={true}></Navegacion>
+      {/* se puede simplificar solo agregando la prop */}
+      <Navegacion ocultarControles ocultarContactos />
       <div className="carrito-container">
         <h1 className="carrito-container_titulo">Mi Carrito</h1>
         <div className="carrito-container_contenido">

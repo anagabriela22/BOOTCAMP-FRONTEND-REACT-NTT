@@ -1,3 +1,4 @@
+/* los estilos deben estar al mismo nivel de donde se usan ya que al ser componentes quienes lo usen deben ser reutilizables y f'aciles de mover, esto aplica para todas las hojas de estilos que son para un componente */
 .formulario-envio {
     margin-top: 20px;
   }

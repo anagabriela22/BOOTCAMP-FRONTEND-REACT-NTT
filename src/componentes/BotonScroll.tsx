@@ -1,5 +1,6 @@
 export const BotonScroll = () => (
-  <a id="ui-to-top"
+  // por accesibilidad usemos role
+  <a role="button" id="ui-to-top"
     className="seccionAnclaBoton fa-solid fa-arrow-up"
   ></a>
 );

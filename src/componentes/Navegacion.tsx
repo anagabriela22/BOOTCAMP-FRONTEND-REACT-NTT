@@ -15,6 +15,7 @@ const Navegacion = ({
   const navigate = useNavigate();
 
   const irAPrincipal = () => {
+    // no usemos string usemos un enum
     navigate("/");
   };
 

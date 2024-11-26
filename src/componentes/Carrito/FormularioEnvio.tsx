@@ -1,3 +1,5 @@
+// si se pone espacios vacios en nombres y apellidos igual registra
+
 import { useContext, useState } from "react";
 import { useDistritos } from "../../hooks/useDistritos";
 import "../../css/carrito/FormularioEnvio.css";
@@ -10,7 +12,8 @@ const FormularioEnvio = () => {
   const { dispatch } = useContext(contextoApp);
   const navegacion = useNavigate();
 
-  const [formulario, setFormulario] = useState({
+  // usemos una interfaz para especificar la key
+  const [formulario, setFormulario] = useState<{ nombres: string; apellidos: string; /** etc */ }>({
     nombres: "",
     apellidos: "",
     distrito: "",
@@ -25,6 +28,7 @@ const FormularioEnvio = () => {
     switch (campo) {
       case "nombres":
       case "apellidos":
+        // que hace este regex? usemos un enum para agruparlos
         if (!/^[a-zA-Z\s]+$/.test(valor)) {
           return "Debe ingresar un valor valido";
         }
@@ -35,6 +39,7 @@ const FormularioEnvio = () => {
         }
         break;
       case "celular":
+        // que hace este regex? usemos un enum para agruparlos
         if (!/^\d{9}$/.test(valor)) {
           return "Debe ingresar un número de celular valido";
         }
@@ -82,6 +87,7 @@ const FormularioEnvio = () => {
       return;
     }
 
+    // esto podr'ia estar en otro archivo para reutilizarlo
     Swal.fire({
       title: "¡Éxito!",
       text: "Su pedido se registro con exito.",
@@ -90,6 +96,7 @@ const FormularioEnvio = () => {
     }).then((resultado) => {
       if (resultado.isConfirmed) {
         dispatch({ type: "VACIAR_CARRITO" });
+        // usemos enum
         navegacion("/");
       }
     });
