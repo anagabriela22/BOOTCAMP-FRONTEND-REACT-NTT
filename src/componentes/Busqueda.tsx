@@ -45,6 +45,7 @@ export const Busqueda = () => {
       id="caja-busqueda"
       className="seccionNavBarPage__navbar--inputBoton"
       type="text"
+      aria-label="buscador"
       placeholder="Buscar..."
       onChange={(e) => {
         buscarPorTexto(e.target.value);

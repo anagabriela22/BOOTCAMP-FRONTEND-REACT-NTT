@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="seccionBannerPrincipal">
+    <div role="banner" className="seccionBannerPrincipal">
       <div className="seccionBannerPrincipal__contenido">
         <p className="seccionBannerPrincipal__contenido--Textos">
           Aromas de Calidad

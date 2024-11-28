@@ -106,7 +106,7 @@ const FormularioEnvio = () => {
   return (
     <div className="formulario-envio">
       <h2>Información de Envío</h2>
-      <form onSubmit={manejarSubmit}>
+      <form role="form" onSubmit={manejarSubmit}>
         <div className="formulario-envio_control">
           <input
             type="text"
@@ -137,6 +137,7 @@ const FormularioEnvio = () => {
         </div>
         <div className="formulario-envio_control">
           <select
+            role="combobox"
             name="distrito"
             value={formulario.distrito}
             onChange={manejarCambio}

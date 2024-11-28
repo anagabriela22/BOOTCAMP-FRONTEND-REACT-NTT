@@ -1,8 +1,11 @@
-export const Servicios = () => (
-  <div className="seccionSR__servicios">
+const Servicios = () => (
+  <div role="region" className="seccionSR__servicios">
     <div className="seccionSR__Cajas">
       <div className="seccionSR__iconmegaHeader">
-        <div className="seccionSR__iconmega lnr lnr-car"></div>
+        <div
+          data-testid="icono-carro"
+          className="seccionSR__iconmega lnr lnr-car"
+        ></div>
       </div>
 
       <p className="seccionSR__nombresTitulo">Delivery Gratis</p>
@@ -13,7 +16,10 @@ export const Servicios = () => (
     </div>
     <div className="seccionSR__Cajas">
       <div className="seccionSR__iconmegaHeader">
-        <div className="seccionSR__iconmega lnr lnr-map"></div>
+        <div
+          data-testid="icono-mapa"
+          className="seccionSR__iconmega lnr lnr-map"
+        ></div>
       </div>
       <p className="seccionSR__nombresTitulo">Ubicación Conveniente</p>
       <p className="seccionSR__descripcion">
@@ -23,7 +29,10 @@ export const Servicios = () => (
     </div>
     <div className="seccionSR__Cajas">
       <div className="seccionSR__iconmegaHeader">
-        <div className="seccionSR__iconmega lnr lnr-earth"></div>
+        <div
+          data-testid="icono-wifi"
+          className="seccionSR__iconmega lnr lnr-earth"
+        ></div>
       </div>
       <p className="seccionSR__nombresTitulo">Wi-Fi Gratis</p>
       <p className="seccionSR__descripcion">
@@ -33,7 +42,10 @@ export const Servicios = () => (
     </div>
     <div className="seccionSR__Cajas">
       <div className="seccionSR__iconmegaHeader">
-        <div className="seccionSR__iconmega lnr lnr-thumbs-up"></div>
+        <div
+          data-testid="icono-pulgar"
+          className="seccionSR__iconmega lnr lnr-thumbs-up"
+        ></div>
       </div>
       <p className="seccionSR__nombresTitulo">Servicio de Calidad</p>
       <p className="seccionSR__descripcion">
@@ -43,3 +55,5 @@ export const Servicios = () => (
     </div>
   </div>
 );
+
+export default Servicios;

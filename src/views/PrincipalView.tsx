@@ -4,11 +4,11 @@ import { funcionalidadScroll } from "../utils/FuncionalidadScroll";
 import { disenoResponsivo } from "../utils/DisenoResponsivo";
 
 import Banner from "../componentes/Banner";
-import { Footer } from "../componentes/Footer";
+import Footer from "../componentes/Footer";
 import Navegacion from "../componentes/Navegacion";
-import { Productos } from "../componentes/Productos";
-import { Servicios } from "../componentes/Servicios";
-import { BotonScroll } from "../componentes/BotonScroll";
+import Productos from "../componentes/Productos";
+import Servicios from "../componentes/Servicios";
+import BotonScroll from "../componentes/BotonScroll";
 
 import "./Principal.css";
 

@@ -16,6 +16,7 @@ const Carrito = () => {
   return (
     <div>
       <span
+        data-testid="carrito-icono"
         className="seccionNavBarPage__navbar-icon--carrito lnr lnr-cart"
         onClick={() => {
           irResumen();

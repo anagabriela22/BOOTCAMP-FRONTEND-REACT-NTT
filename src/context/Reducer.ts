@@ -7,6 +7,7 @@ export type EstadoApp = {
   productosFiltrados: Producto[];
   modoFiltro: boolean;
   productosCarrito: ProductoCarrito[];
+  erorApp: String | null;
 };
 
 export const estadoInicial: EstadoApp = {
@@ -15,6 +16,7 @@ export const estadoInicial: EstadoApp = {
   productosFiltrados: [],
   modoFiltro: false,
   productosCarrito: [],
+  erorApp: null,
 };
 
 export type Accion =
@@ -25,7 +27,8 @@ export type Accion =
   | { type: "AGREGAR_AL_CARRITO"; payload: ProductoCarrito }
   | { type: "ELIMINAR_DEL_CARRITO"; payload: number }
   | { type: "ACTUALIZAR_CANTIDAD"; payload: { id: number; cantidad: number } }
-  | { type: "VACIAR_CARRITO" };
+  | { type: "VACIAR_CARRITO" }
+  | { type: "ESTABLECER_ERROR_APP"; payload: String | null };
 
 export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
   switch (action.type) {
@@ -89,6 +92,8 @@ export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
         ...state,
         productosCarrito: [],
       };
+    case "ESTABLECER_ERROR_APP":
+      return { ...state, erorApp: action.payload };
     default:
       return state;
   }

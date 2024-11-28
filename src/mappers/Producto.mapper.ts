@@ -1,5 +1,5 @@
 import { Producto } from "../models/Producto.type";
-enum Disponibilidad {
+export enum Disponibilidad {
   Disponible = "Disponible",
   Agotado = "Agotado",
 }

@@ -20,9 +20,12 @@ const Navegacion = ({
   };
 
   return (
-    <div className="seccionNavBarPage">
+    <div role="navigation" className="seccionNavBarPage">
       {!ocultarContactos && (
-        <div className="seccionNavBarPage__boxes seccionNavBarPage__box--first">
+        <div
+          data-testid="contactos"
+          className="seccionNavBarPage__boxes seccionNavBarPage__box--first"
+        >
           <div className="seccionNavBarPage__contenido-NavBarside--first">
             <div className="seccionNavBarPage__navbar-contactos--first">
               <p className="seccionNavBarPage__navbar--telefonos">
@@ -94,12 +97,17 @@ const Navegacion = ({
             </div>
 
             <div className="seccionNavBarPage__resumen-volver-contenedor">
-              <a onClick={() => irAPrincipal()}>Seguir comprando</a>
+              <a role="button" onClick={() => irAPrincipal()}>
+                Seguir comprando
+              </a>
             </div>
           </div>
         </div>
       ) : (
-        <div className="seccionNavBarPage__boxes seccionNavBarPage__box--second">
+        <div
+          data-testid="controles"
+          className="seccionNavBarPage__boxes seccionNavBarPage__box--second"
+        >
           <div className="seccionNavBarPage__contenido-NavBarside--second">
             <div className="seccionNavBarPage__navbar-redes--first">
               <img

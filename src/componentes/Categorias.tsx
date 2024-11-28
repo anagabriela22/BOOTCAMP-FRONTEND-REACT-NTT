@@ -9,6 +9,8 @@ const Categorias = () => {
 
   const { productos } = state;
   const categoriaTodos = "all";
+  const [categoriaSeleccionada, setCategoriaSeleccionada] =
+    useState(categoriaTodos);
 
   const filtrarPorCategoria = (categoria: string) => {
     if (categoria == categoriaTodos) {
@@ -45,7 +47,10 @@ const Categorias = () => {
         const categoriasObtenidas = await obtenerCategorias();
         setCategorias(categoriasObtenidas);
       } catch (error) {
-        console.error("Error al cargar categorías:", error);
+        dispatch({
+          type: "ESTABLECER_ERROR_APP",
+          payload: "Error al cargar categorías",
+        });
       }
     };
 
@@ -56,17 +61,17 @@ const Categorias = () => {
 
   return (
     <select
+      role="combobox"
       id="categorias"
       className="seccionNavBarPage__categorias"
+      value={categoriaSeleccionada}
       onChange={(evento) => {
-        const categoria = evento.target.value;
-
+        let categoria = evento.target.value;
+        setCategoriaSeleccionada(categoria);
         filtrarPorCategoria(categoria);
       }}
     >
-      <option selected value="all">
-        Categorías
-      </option>
+      <option value="all">Categorías</option>
       {categorias.map((categoria) => (
         <option key={categoria} value={categoria}>
           {categoria}

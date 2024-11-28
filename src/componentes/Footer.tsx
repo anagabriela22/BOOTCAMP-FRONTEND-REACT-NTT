@@ -1,4 +1,4 @@
-export const Footer = () => {
+const Footer = () => {
   const listaInformativa = [
     "Nosotros",
     "Últimas Noticias",
@@ -17,7 +17,7 @@ export const Footer = () => {
     "Perfumes",
   ];
   return (
-    <div className="seccionFooter">
+    <div role="contentinfo" className="seccionFooter">
       <div className="seccionFooter__container">
         <div className="seccionFooter__boxes seccionFooter__boxes--first">
           <div className="seccionFooter__subbox seccionFooter__box--first">
@@ -107,18 +107,22 @@ export const Footer = () => {
               <div className="seccionFooter__informaciones--boxes">
                 <div className="seccionFooter__informaciones--boxes">
                   <a
+                    data-testid="fa-facebook-f"
                     className="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-facebook-f"
                     href="#"
                   ></a>
                   <a
+                    data-testid="fa-twitter"
                     className="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-twitter"
                     href="#"
                   ></a>
                   <a
+                    data-testid="fa-instagram"
                     className="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-instagram"
                     href="#"
                   ></a>
                   <a
+                    data-testid="fa-google-plus-g"
                     className="seccionFooter__informaciones--icon seccionFooter__icon--first fa-brands fa-google-plus-g"
                     href="#"
                   ></a>
@@ -144,3 +148,5 @@ export const Footer = () => {
     </div>
   );
 };
+
+export default Footer;

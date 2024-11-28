@@ -15,7 +15,7 @@ const ResumenOrden = () => {
     return precioTotal.toFixed(2);
   };
   return (
-    <div className="resumen-orden">
+    <div data-testid="resumen-orden" className="resumen-orden">
       <h2>Resumen de la Orden</h2>
       <div className="resumen-orden_item">
         <span>Subtotal</span>

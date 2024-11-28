@@ -25,7 +25,9 @@ const Paginacion = ({
             className={`paginacion__boton ${
               numeroPagina === paginaActual ? "active" : ""
             }`}
-            onClick={() => onPageChange(numeroPagina)}
+            onClick={() => {
+              onPageChange(numeroPagina);
+            }}
           >
             {numeroPagina}
           </button>

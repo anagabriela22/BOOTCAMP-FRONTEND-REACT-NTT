@@ -9,7 +9,7 @@ import { Producto } from "../models/Producto.type";
 const primeraPagina = 1;
 const elementosPorPagina = 10;
 
-export const Productos = () => {
+const Productos = () => {
   const { state, dispatch } = useContext(contextoApp);
 
   const { productosFiltrados, modoFiltro } = state;
@@ -65,7 +65,7 @@ export const Productos = () => {
   }
 
   return (
-    <div className="productos-container">
+    <div data-testid="Productos" className="productos-container">
       <div className="seccionProductos">
         <p className="seccionProductos__titulo">Productos Top</p>
 
@@ -85,3 +85,5 @@ export const Productos = () => {
     </div>
   );
 };
+
+export default Productos;
