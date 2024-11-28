@@ -31,6 +31,9 @@ npm install @testing-library/react-hooks --force
 5. **Inicia el servidor de desarrollo**:
 npm run dev
 
+6. **Ejecuta los tests (pruebas unitarias)**:
+npm run test
+
 ## Arquitectura de carpetas
 
 public
