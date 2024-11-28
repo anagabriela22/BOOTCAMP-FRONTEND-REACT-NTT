@@ -24,8 +24,6 @@ const Categorias = () => {
       return;
     }
 
-    //Filtrar
-
     dispatch({
       type: "ESTABLECER_MODO_FILTRO",
       payload: true,

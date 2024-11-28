@@ -21,8 +21,6 @@ export const Busqueda = () => {
       });
       return;
     }
-    //Filtrar
-
     dispatch({
       type: "ESTABLECER_MODO_FILTRO",
       payload: true,

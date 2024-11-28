@@ -1,4 +1,3 @@
-// el idioma
 export interface Producto {
   id: number;
   title: string;

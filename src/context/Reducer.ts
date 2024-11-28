@@ -42,13 +42,11 @@ export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
       return { ...state, modoFiltro: action.payload };
 
     case "AGREGAR_AL_CARRITO": {
-      // no usemos abreviaciones y usemos destructuracion
       const productoExistente = state.productosCarrito.find(
         ({ producto }) => producto.id === action.payload.producto.id
       );
 
       if (productoExistente) {
-        // no usemos abreviaciones (p)
         return {
           ...state,
           productosCarrito: state.productosCarrito.map((producto) =>

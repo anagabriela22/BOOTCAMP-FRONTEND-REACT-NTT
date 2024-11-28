@@ -8,7 +8,6 @@ const TablaProductos = () => {
   const { productosCarrito } = state;
 
   const decrementarCantidad = (productoCarrito: ProductoCarrito) => {
-    // no usemos abreviaciones
     const productoEncontrado = productosCarrito.find(
       (producto) => producto.producto.id == productoCarrito.producto.id
     );
