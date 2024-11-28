@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { contextoApp } from "../context/Contexto";
 import { useNavigate } from "react-router-dom";
+import { Rutas } from "../enum/Rutas";
 
 const Carrito = () => {
   const { state } = useContext(contextoApp);
@@ -9,7 +10,7 @@ const Carrito = () => {
   const navigate = useNavigate();
 
   const irResumen = () => {
-    navigate("/resumen");
+    navigate(Rutas.Resumen);
   };
 
   return (

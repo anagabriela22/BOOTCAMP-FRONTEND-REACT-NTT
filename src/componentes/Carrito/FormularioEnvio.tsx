@@ -1,16 +1,19 @@
 import { useContext, useState } from "react";
 import { useDistritos } from "../../hooks/useDistritos";
-import "../../css/carrito/FormularioEnvio.css";
+import "./FormularioEnvio.css";
 import Swal from "sweetalert2";
 import { contextoApp } from "../../context/Contexto";
 import { useNavigate } from "react-router-dom";
+import { FormularioEnvio as FormularioEnvioType } from "../../models/FormularioEnvio.type";
+import { Validaciones } from "../../enum/Validaciones";
+import { Rutas } from "../../enum/Rutas";
 
 const FormularioEnvio = () => {
   const distritos = useDistritos();
   const { dispatch } = useContext(contextoApp);
   const navegacion = useNavigate();
 
-  const [formulario, setFormulario] = useState({
+  const [formulario, setFormulario] = useState<FormularioEnvioType>({
     nombres: "",
     apellidos: "",
     distrito: "",
@@ -20,22 +23,27 @@ const FormularioEnvio = () => {
   });
 
   const [errores, setErrores] = useState<Record<string, string>>({});
-
   const validarCampo = (campo: string, valor: string) => {
     switch (campo) {
       case "nombres":
+        if (!new RegExp(Validaciones.SoloLetrasYEspacios).test(valor.trim())) {
+          return "Debe ingresar un nombre valido";
+        }
+        break;
       case "apellidos":
-        if (!/^[a-zA-Z\s]+$/.test(valor)) {
-          return "Debe ingresar un valor valido";
+        if (!new RegExp(Validaciones.SoloLetrasYEspacios).test(valor.trim())) {
+          return "Debe ingresar un apellido valido";
         }
         break;
       case "distrito":
-        if (!valor) {
+        if (!valor.trim()) {
           return "Debe seleccionar un distrito";
         }
         break;
       case "celular":
-        if (!/^\d{9}$/.test(valor)) {
+        if (
+          !new RegExp(Validaciones.SoloNumerosDe9Digitos).test(valor.trim())
+        ) {
           return "Debe ingresar un número de celular valido";
         }
         break;
@@ -90,10 +98,9 @@ const FormularioEnvio = () => {
     }).then((resultado) => {
       if (resultado.isConfirmed) {
         dispatch({ type: "VACIAR_CARRITO" });
-        navegacion("/");
+        navegacion(Rutas.Principal);
       }
     });
-    console.log(formulario);
   };
 
   return (

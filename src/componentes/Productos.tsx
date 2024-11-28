@@ -4,15 +4,28 @@ import { obtenerProductos } from "../services/Productos";
 import TarjetaProducto from "./TarjetaProducto";
 import Paginacion from "./Paginacion";
 import { contextoApp } from "../context/Contexto";
+import { Producto } from "../models/Producto.type";
+
+const primeraPagina = 1;
+const elementosPorPagina = 10;
 
 export const Productos = () => {
   const { state, dispatch } = useContext(contextoApp);
 
   const { productosFiltrados, modoFiltro } = state;
 
-  const [paginaActual, setPaginaActual] = useState<number>(1);
+  const [paginaActual, setPaginaActual] = useState<number>(primeraPagina);
 
-  const elementosPorPagina = 10;
+  const obtenerProductosPorPagina = (
+    productos: Producto[],
+    pagina: number,
+    elementosPorPagina: number
+  ) => {
+    return productos.slice(
+      (pagina - 1) * elementosPorPagina,
+      pagina * elementosPorPagina
+    );
+  };
 
   useEffect(() => {
     const cargarProductos = async () => {
@@ -37,16 +50,17 @@ export const Productos = () => {
   }, []);
   let productosPagina = [];
 
-  if (modoFiltro == false) {
-    productosPagina = productosFiltrados.slice(
-      (paginaActual - 1) * elementosPorPagina,
-      paginaActual * elementosPorPagina
+  if (modoFiltro === false) {
+    productosPagina = obtenerProductosPorPagina(
+      productosFiltrados,
+      paginaActual,
+      elementosPorPagina
     );
   } else {
-    let paginaActualUno = 1;
-    productosPagina = productosFiltrados.slice(
-      (paginaActualUno - 1) * elementosPorPagina,
-      paginaActualUno * elementosPorPagina
+    productosPagina = obtenerProductosPorPagina(
+      productosFiltrados,
+      primeraPagina,
+      elementosPorPagina
     );
   }
 

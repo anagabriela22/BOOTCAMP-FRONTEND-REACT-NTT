@@ -5,8 +5,9 @@ interface NavegacionProps {
   ocultarControles: boolean;
   ocultarContactos: boolean;
 }
-import "../css/principal/Navegacion.css";
+import "./Navegacion.css";
 import { useNavigate } from "react-router-dom";
+import { Rutas } from "../enum/Rutas";
 
 const Navegacion = ({
   ocultarControles,
@@ -15,7 +16,7 @@ const Navegacion = ({
   const navigate = useNavigate();
 
   const irAPrincipal = () => {
-    navigate("/");
+    navigate(Rutas.Principal);
   };
 
   return (

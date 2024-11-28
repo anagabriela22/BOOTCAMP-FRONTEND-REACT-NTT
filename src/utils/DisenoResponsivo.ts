@@ -1,3 +1,4 @@
+// como sugerencia usemos ingl'es para escribir el c'odigo ya que mucho de los proyectos se escriben en ese idioma
 export function disenoResponsivo(): void {
   const buscador = document.getElementById("buscador");
   const contenedorMobil = document.getElementById("buscador-mobil-contenedor");

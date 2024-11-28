@@ -42,17 +42,22 @@ export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
       return { ...state, modoFiltro: action.payload };
 
     case "AGREGAR_AL_CARRITO": {
+      // no usemos abreviaciones y usemos destructuracion
       const productoExistente = state.productosCarrito.find(
-        (p) => p.producto.id === action.payload.producto.id
+        ({ producto }) => producto.id === action.payload.producto.id
       );
 
       if (productoExistente) {
+        // no usemos abreviaciones (p)
         return {
           ...state,
-          productosCarrito: state.productosCarrito.map((p) =>
-            p.producto.id === action.payload.producto.id
-              ? { ...p, cantidad: p.cantidad + action.payload.cantidad }
-              : p
+          productosCarrito: state.productosCarrito.map((producto) =>
+            producto.producto.id === action.payload.producto.id
+              ? {
+                  ...producto,
+                  cantidad: producto.cantidad + action.payload.cantidad,
+                }
+              : producto
           ),
         };
       }
@@ -74,10 +79,10 @@ export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
     case "ACTUALIZAR_CANTIDAD":
       return {
         ...state,
-        productosCarrito: state.productosCarrito.map((p) =>
-          p.producto.id === action.payload.id
-            ? { ...p, cantidad: action.payload.cantidad }
-            : p
+        productosCarrito: state.productosCarrito.map((producto) =>
+          producto.producto.id === action.payload.id
+            ? { ...producto, cantidad: action.payload.cantidad }
+            : producto
         ),
       };
 

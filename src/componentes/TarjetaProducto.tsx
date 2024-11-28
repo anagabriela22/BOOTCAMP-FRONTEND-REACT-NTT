@@ -21,9 +21,9 @@ const TarjetaProducto = ({ producto }: TarjetaProductoProps) => {
     });
   };
 
-  const estaEnCarrito = (producto: Producto) => {
+  const estaEnCarrito = (productoABuscar: Producto) => {
     const productoEncontrado = productosCarrito.find(
-      (p) => p.producto.id == producto.id
+      (producto) => producto.producto.id == productoABuscar.id
     );
 
     if (productoEncontrado) return true;

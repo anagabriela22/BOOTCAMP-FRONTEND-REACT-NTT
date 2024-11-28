@@ -4,13 +4,14 @@ enum Disponibilidad {
   Agotado = "Agotado",
 }
 
-export function mapProduct(producto: Producto) {
+// agreguemos el tipo de retorno para que no sea implicito
+export function mapProduct(producto: Producto): MyType {
   return {
     id: producto.id,
     name: producto.title,
     price: producto.price,
     availabilityStatus:
-    producto.stock > 0 ? Disponibilidad.Disponible : Disponibilidad.Agotado,
+      producto.stock > 0 ? Disponibilidad.Disponible : Disponibilidad.Agotado,
     thumbnail: producto.thumbnail,
     category: producto.category,
   };

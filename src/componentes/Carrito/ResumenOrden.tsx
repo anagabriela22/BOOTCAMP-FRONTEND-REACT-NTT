@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "../../css/carrito/ResumenOrden.css";
+import "./ResumenOrden.css";
 import { contextoApp } from "../../context/Contexto";
 
 const ResumenOrden = () => {

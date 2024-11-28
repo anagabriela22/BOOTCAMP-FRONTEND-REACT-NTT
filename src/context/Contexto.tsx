@@ -1,5 +1,6 @@
 import React, { createContext, ReactNode, useEffect, useReducer } from "react";
 import { reducer, estadoInicial, EstadoApp, Accion } from "./Reducer";
+import { cargarEstado, guardarEstado } from "../utils/Almacenamiento";
 
 export interface ContextoProps {
   state: EstadoApp;
@@ -14,20 +15,12 @@ export const contextoApp = createContext<ContextoProps>({
 export const ContextoProveedor: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  //const [state, dispatch] = useReducer(reducer, estadoInicial);
-
-  // Recuperar el estado desde localStorage
-  const estadoGuardado = localStorage.getItem("estadoApp");
-  const estadoInicialPersistente = estadoGuardado
-    ? JSON.parse(estadoGuardado)
-    : estadoInicial;
+  const estadoInicialPersistente = cargarEstado("estadoApp", estadoInicial);
 
   const [state, dispatch] = useReducer(reducer, estadoInicialPersistente);
 
-  // Guardar el estado en localStorage cada vez que cambie
-
   useEffect(() => {
-    localStorage.setItem("estadoApp", JSON.stringify(state));
+    guardarEstado("estadoApp", state);
   }, [state]);
 
   return (
