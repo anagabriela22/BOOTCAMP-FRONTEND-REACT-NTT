@@ -31,6 +31,7 @@ export const Busqueda = () => {
       const descripcion = producto.description?.toLowerCase() || "";
       const categoria = producto.category.toLowerCase();
 
+      //Necesario para el filtro, ya que se debe filtrar por caracter coincidente, no por palabra completa
       return (
         titulo.includes(filtro) ||
         descripcion.includes(filtro) ||
