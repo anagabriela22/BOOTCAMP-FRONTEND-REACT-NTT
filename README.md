@@ -23,15 +23,12 @@ La rama `feature/pruebas-unitarias` contiene estas implementaciones.
 git checkout feature/pruebas-unitarias
 
 3. **Instala las dependencias**:
-npm install
+npm install --force
 
-4. **Instala dependencia para testear hooks**:
-npm install @testing-library/react-hooks --force
-
-5. **Inicia el servidor de desarrollo**:
+4. **Inicia el servidor de desarrollo**:
 npm run dev
 
-6. **Ejecuta los tests (pruebas unitarias)**:
+5. **Ejecuta los tests (pruebas unitarias)**:
 npm run test
 
 ## Arquitectura de carpetas
