@@ -8,6 +8,7 @@ interface NavegacionProps {
 import "./Navegacion.css";
 import { useNavigate } from "react-router-dom";
 import { Rutas } from "../enum/Rutas";
+import NavUser from "./NavUser";
 
 const Navegacion = ({
   ocultarControles,
@@ -137,7 +138,7 @@ const Navegacion = ({
 
             <div className="seccionNavBarPage__navbar-redes--third">
               <div className="seccionNavBarPage__navbar-redes--logincompra">
-                <span className="seccionNavBarPage__navbar-icon--login lnr lnr-user"></span>
+                <NavUser />
                 <Carrito />
               </div>
             </div>

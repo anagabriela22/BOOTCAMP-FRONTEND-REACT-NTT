@@ -1,0 +1,191 @@
+.login-container {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('./../assets/product-store_1280x853.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .login-modal {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 400px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .checkbox-group a {
+    color: #c00;
+    text-decoration: none;
+  }
+  
+  .forgot-password {
+    font-size: 14px;
+    color: #c00;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn-login:hover {
+    background-color: #900;
+  }
+  
+
+  /* Estilo general del overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alineación superior */
+    z-index: 9999;
+    overflow-y: auto;
+  }
+  
+  /* Modal para restablecer contraseña */
+  .reset-modal {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 400px;
+    margin-top: 40px; /* Posición inicial por encima */
+    transform: translateY(-50px); /* Inicia fuera de vista */
+    opacity: 0; /* Oculto inicialmente */
+    animation: slideDown 0.4s ease-out forwards; /* Animación para deslizar hacia abajo */
+  }
+  
+  .reset-modal h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .reset-modal .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .reset-modal label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .reset-modal input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .reset-modal .checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .reset-modal .checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .reset-modal .checkbox-group a {
+    color: #c00;
+    text-decoration: none;
+  }
+  
+  .reset-modal .btn-reset {
+    width: 100%;
+    padding: 10px;
+    background-color: #d99894;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .reset-modal .btn-reset:hover {
+    background-color: #c66b67;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Animación para que el modal baje */
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(20px); /* Termina un poco arriba del centro */
+      opacity: 1;
+    }
+  }
+  

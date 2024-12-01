@@ -1,0 +1,104 @@
+
+.user-container {
+    position: relative; 
+}
+.user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white; 
+    color: red;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.user-container_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 90px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.user-container_content_text{
+    margin-bottom: 5px;
+}
+.user-container_icons{ 
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;   
+    display: flex;
+    align-items: center;            
+    justify-content: space-evenly;
+}
+.user-container_icons_flecha{  
+    cursor: pointer;
+}
+/* Menú desplegable */
+.user-menu {
+    position: absolute; /* Posiciona el menú respecto al ícono */
+    top: 50px; /* Desplaza hacia abajo del ícono (ajusta según el diseño) */
+    right: 0; /* Alinea el menú al borde izquierdo del ícono */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* Texto de bienvenida */
+.user-menu p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Botón de cerrar sesión */
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #f5f5f5;
+}
+
+/* Icono del botón de cerrar sesión */
+.logout-icon {
+    margin-right: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .user-container_content_text{
+        display: none;
+    }
+
+    .user-container_content{
+     
+        width: 70px;
+      
+    }
+    
+
+}
