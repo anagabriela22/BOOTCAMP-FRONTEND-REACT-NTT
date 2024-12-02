@@ -1,6 +1,6 @@
 # Market App
 
-## Descripción del proyecto (Rama `feature/pruebas-unitarias`)
+## Descripción del proyecto (Rama `feature/proyecto-integrador`)
 
 Este proyecto es una aplicación creada con React + Typescript + Vite + Jest. La funcionalidad principal incluye:
 
@@ -11,8 +11,9 @@ Este proyecto es una aplicación creada con React + Typescript + Vite + Jest. La
 - **Diseño responsivo**: Adaptado a diferentes dispositivos (Mobil, Tablet y Pc).
 - **Pagina resumen**: Se visualizara el detalle de tu carrito de compras.
 - **Pruebas unitarias**: Se puede realizar el testeo de cada uno de los componentes, hooks y vistas.
+- **Funcionalidad de autenticacion**: La web permite iniciar sesion, visualizar nombre y cerrar sesion.
 
-La rama `feature/pruebas-unitarias` contiene estas implementaciones.
+La rama `feature/proyecto-integrador` contiene estas implementaciones.
 
 ## Instalación y ejecución local
 
@@ -20,7 +21,7 @@ La rama `feature/pruebas-unitarias` contiene estas implementaciones.
    git clone <https://github.com/anagabriela22/BOOTCAMP-FRONTEND-REACT-NTT>
 
 2. **Cambia a la rama correspondiente**:
-git checkout feature/pruebas-unitarias
+git checkout feature/proyecto-integrador
 
 3. **Instala las dependencias**:
 npm install --force
@@ -53,6 +54,7 @@ src/
 │   ├── Paginacion.tsx
 │   ├── Productos.tsx
 │   ├── Servicios.tsx
+│   ├── NavUser.tsx
 │   └── TarjetaProducto.tsx
 ├── context/                    # Contextos para manejo de estados globales
 │   └── Contexto.tsx
@@ -70,9 +72,13 @@ src/
 │   ├── Categoria.type.ts
 │   └── Productos.type.ts
 ├── services/                   # Interacción con APIs externas
+│   ├── Auth.ts
 │   ├── Categorias.ts
 │   └── Productos.ts
+├── hoc/                   # Interacción con APIs externas
+│   ├── withAuth.tsx
 ├── utils/                      # Utilidades generales
+│   ├── CadenasTxt.ts
 │   ├── DisenoResponsivo.ts
 │   ├── FuncionalidadScroll.ts
 │   └── Almacenamiento.ts
@@ -81,6 +87,7 @@ src/
         └── [pruebas_unitarias]
 │   ├── CarritoView.ts
 │   ├── PrincipalView.ts
+│   ├── LoginView.ts
 ├── App.tsx                     # Componente raíz de la aplicación
 ├── Environment.tsx             # Variables globales de la aplicacion
 ├── main.tsx                    # Punto de entrada de React
