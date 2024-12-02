@@ -16,7 +16,7 @@ const PrincipalView = () => {
   useEffect(() => {
     funcionalidadScroll();
     disenoResponsivo();
-  });
+  }, []);
 
   return (
     <>

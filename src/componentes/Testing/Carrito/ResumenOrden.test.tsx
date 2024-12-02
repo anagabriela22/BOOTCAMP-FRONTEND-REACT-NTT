@@ -8,6 +8,8 @@ import "@testing-library/jest-dom";
 describe("ResumenOrden", () => {
   const mockDispatch = jest.fn();
   const mockState: EstadoApp = {
+    categoria: "",
+    usuario: null,
     productos: [],
     productosFiltrados: [],
     modoFiltro: false,

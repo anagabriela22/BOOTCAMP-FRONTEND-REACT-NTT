@@ -15,6 +15,8 @@ describe("Componente Categorias", () => {
   const mockDispatch = jest.fn();
 
   const mockState = {
+    categoria: "",
+    usuario: null,
     productos: [
       {
         id: 1,

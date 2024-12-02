@@ -1,5 +1,7 @@
-.login-container {
-    margin: 0;
+.login-container {  
+    margin: 0;    
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: Arial, sans-serif;
     background: url('./../assets/product-store_1280x853.jpg') center/cover no-repeat;
     display: flex;
@@ -15,7 +17,7 @@
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     text-align: center;
-    width: 400px;
+    width: 400px;    
   }
   
   h2 {
@@ -36,6 +38,7 @@
   }
   
   input[type="email"],
+  input[type="text"],
   input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -60,10 +63,11 @@
   
   .forgot-password {
     font-size: 14px;
-    color: #c00;
+    color:rgb(19, 60, 122) ;
     text-decoration: none;
     display: block;
     margin-top: 10px;
+    text-align: right;
   }
   
   .btn-login {
@@ -76,6 +80,7 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 10px;
   }
   
   .btn-login:hover {
@@ -96,6 +101,8 @@
     align-items: flex-start; /* Alineación superior */
     z-index: 9999;
     overflow-y: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   
   /* Modal para restablecer contraseña */
@@ -154,7 +161,7 @@
   .reset-modal .btn-reset {
     width: 100%;
     padding: 10px;
-    background-color: #d99894;
+    background-color: #c00;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -189,3 +196,8 @@
     }
   }
   
+
+  .login-modal_error{
+    color: red;
+    
+  }

@@ -7,6 +7,8 @@ import "@testing-library/jest-dom";
 
 const mockDispatch = jest.fn();
 const mockState: EstadoApp = {
+  categoria: "",
+  usuario: null,
   productos: [],
   productosFiltrados: [],
   modoFiltro: false,

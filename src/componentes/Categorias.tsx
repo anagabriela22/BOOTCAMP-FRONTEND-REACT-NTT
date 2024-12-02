@@ -7,13 +7,17 @@ const Categorias = () => {
 
   const { state, dispatch } = useContext(contextoApp);
 
-  const { productos } = state;
+  const { productos, categoria } = state;
   const categoriaTodos = "all";
-  const [categoriaSeleccionada, setCategoriaSeleccionada] =
-    useState(categoriaTodos);
 
-  const filtrarPorCategoria = (categoria: string) => {
-    if (categoria == categoriaTodos) {
+  const filtrarPorCategoria = (categoriaSeleccionada: string) => {
+    dispatch({
+      type: "ESTABLECER_CATEGORIA",
+      payload: categoriaSeleccionada,
+    });
+    console.log(categoriaSeleccionada, categoria);
+
+    if (categoriaSeleccionada == categoriaTodos) {
       dispatch({
         type: "ESTABLECER_PRODUCTOS_FILTRADOS",
         payload: productos,
@@ -32,7 +36,7 @@ const Categorias = () => {
     });
 
     const nuevosProductosFiltrados = productos.filter(
-      (producto) => producto.category === categoria
+      (producto) => producto.category === categoriaSeleccionada
     );
 
     dispatch({
@@ -54,24 +58,23 @@ const Categorias = () => {
       }
     };
 
-    (async () => {
-      await cargarCategorias();
-    })();
-  }, []);
+    if (!categorias.length) {
+      cargarCategorias();
+    }
+  }, [categorias, dispatch]);
 
   return (
     <select
       role="combobox"
       id="categorias"
       className="seccionNavBarPage__categorias"
-      value={categoriaSeleccionada}
+      value={categoria}
       onChange={(evento) => {
         let categoria = evento.target.value;
-        setCategoriaSeleccionada(categoria);
         filtrarPorCategoria(categoria);
       }}
     >
-      <option value="all">Categorías</option>
+      <option value={categoriaTodos}>Categorías</option>
       {categorias.map((categoria) => (
         <option key={categoria} value={categoria}>
           {categoria}

@@ -13,6 +13,8 @@ describe("Productos", () => {
   const mockDispatch = jest.fn();
 
   const mockState: EstadoApp = {
+    categoria: "",
+    usuario: null,
     productos: [],
     productosFiltrados: [
       {
@@ -63,6 +65,7 @@ describe("Productos", () => {
   });
 
   it("no mostrar paginacion si solo hay una pagina", async () => {
+    mockState.productosFiltrados = [];
     renderProductos();
     await waitFor(() => expect(obtenerProductos).toHaveBeenCalled());
 

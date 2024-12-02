@@ -43,6 +43,8 @@ describe("Componente Busqueda", () => {
     carritoContador: 0,
     productosCarrito: [],
     erorApp: null,
+    categoria: "",
+    usuario: null,
   };
 
   beforeEach(() => {

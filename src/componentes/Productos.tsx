@@ -44,10 +44,10 @@ const Productos = () => {
         console.error("Error al obtener los productos:", error);
       }
     };
-    (async () => {
-      await cargarProductos();
-    })();
-  }, []);
+    if (!productosFiltrados.length) {
+      cargarProductos();
+    }
+  }, [productosFiltrados, dispatch]);
   let productosPagina = [];
 
   if (modoFiltro === false) {

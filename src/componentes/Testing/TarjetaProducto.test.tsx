@@ -9,6 +9,8 @@ import { Disponibilidad } from "../../mappers/Producto.mapper";
 const mockDispatch = jest.fn();
 
 const mockState: EstadoApp = {
+  categoria: "",
+  usuario: null,
   productos: [],
   productosFiltrados: [
     {

@@ -1,4 +1,5 @@
 export enum Rutas {
-  Principal = "/",
+  Login = "/",
+  Principal = "/principal",
   Resumen = "/resumen",
 }

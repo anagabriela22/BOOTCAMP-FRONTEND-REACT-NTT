@@ -1,5 +1,6 @@
 import { Producto } from "../models/Producto.type";
 import { ProductoCarrito } from "../models/ProductoCarrito.type";
+import { UsuarioApi } from "../models/UsuarioApi.type";
 
 export type EstadoApp = {
   carritoContador: number;
@@ -8,6 +9,8 @@ export type EstadoApp = {
   modoFiltro: boolean;
   productosCarrito: ProductoCarrito[];
   erorApp: String | null;
+  categoria: string;
+  usuario: UsuarioApi | null;
 };
 
 export const estadoInicial: EstadoApp = {
@@ -17,6 +20,8 @@ export const estadoInicial: EstadoApp = {
   modoFiltro: false,
   productosCarrito: [],
   erorApp: null,
+  categoria: "all",
+  usuario: null,
 };
 
 export type Accion =
@@ -28,7 +33,9 @@ export type Accion =
   | { type: "ELIMINAR_DEL_CARRITO"; payload: number }
   | { type: "ACTUALIZAR_CANTIDAD"; payload: { id: number; cantidad: number } }
   | { type: "VACIAR_CARRITO" }
-  | { type: "ESTABLECER_ERROR_APP"; payload: String | null };
+  | { type: "ESTABLECER_ERROR_APP"; payload: String | null }
+  | { type: "ESTABLECER_USUARIO"; payload: UsuarioApi | null }
+  | { type: "ESTABLECER_CATEGORIA"; payload: string };
 
 export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
   switch (action.type) {
@@ -94,6 +101,10 @@ export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
       };
     case "ESTABLECER_ERROR_APP":
       return { ...state, erorApp: action.payload };
+    case "ESTABLECER_USUARIO":
+      return { ...state, usuario: action.payload };
+    case "ESTABLECER_CATEGORIA":
+      return { ...state, categoria: action.payload };
     default:
       return state;
   }

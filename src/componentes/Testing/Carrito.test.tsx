@@ -39,6 +39,8 @@ describe("Componente Carrito", () => {
         },
       },
     ],
+    categoria: "",
+    usuario: null,
   };
 
   const renderCarrito = (state = mockState) => {
