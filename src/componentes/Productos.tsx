@@ -1,6 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-
-import { obtenerProductos } from "../services/Productos";
+import { useContext, useState } from "react";
 import TarjetaProducto from "./TarjetaProducto";
 import Paginacion from "./Paginacion";
 import { contextoApp } from "../context/Contexto";
@@ -10,9 +8,13 @@ const primeraPagina = 1;
 const elementosPorPagina = 10;
 
 const Productos = () => {
-  const { state, dispatch } = useContext(contextoApp);
+  console.log("PRODUCTOS");
+  
+  const { state } = useContext(contextoApp);
 
   const { productosFiltrados, modoFiltro } = state;
+  console.log({modoFiltro});
+  
 
   const [paginaActual, setPaginaActual] = useState<number>(primeraPagina);
 
@@ -27,27 +29,6 @@ const Productos = () => {
     );
   };
 
-  useEffect(() => {
-    const cargarProductos = async () => {
-      try {
-        const productosObtenidos = await obtenerProductos();
-
-        dispatch({
-          type: "ESTABLECER_PRODUCTOS",
-          payload: productosObtenidos,
-        });
-        dispatch({
-          type: "ESTABLECER_PRODUCTOS_FILTRADOS",
-          payload: productosObtenidos,
-        });
-      } catch (error) {
-        console.error("Error al obtener los productos:", error);
-      }
-    };
-    if (!productosFiltrados.length) {
-      cargarProductos();
-    }
-  }, [productosFiltrados, dispatch]);
   let productosPagina = [];
 
   if (modoFiltro === false) {
@@ -75,12 +56,17 @@ const Productos = () => {
           ))}
         </div>
 
-        <Paginacion
-          totalElementos={productosFiltrados.length}
-          elementosPorPagina={elementosPorPagina}
-          paginaActual={paginaActual}
-          onPageChange={setPaginaActual}
-        />
+          {!modoFiltro && (
+            
+                    <Paginacion
+                      totalElementos={productosFiltrados.length}
+                      elementosPorPagina={elementosPorPagina}
+                      paginaActual={paginaActual}
+                      onPageChange={setPaginaActual}
+                    />
+
+
+          )}
       </div>
     </div>
   );

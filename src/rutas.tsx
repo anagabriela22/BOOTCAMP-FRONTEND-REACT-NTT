@@ -2,13 +2,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrincipalView from "./views/PrincipalView";
 import CarritoView from "./views/CarritoView";
 import LoginView from "./views/LoginView";
-import { useContext } from "react";
-import { contextoApp } from "./context/Contexto";
 import withAuth from "./hoc/withAuth";
-
+import {cargarEstado} from "./utils/Almacenamiento";
 const Rutas = () => {
-  const { state } = useContext(contextoApp);
-  const { usuario } = state;
+  const usuario = cargarEstado("usuario", null)      
+
   const inicioSesion = usuario ? true : false;
 
   const PrincipalProtegida = withAuth(PrincipalView);

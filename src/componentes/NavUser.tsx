@@ -1,23 +1,22 @@
 import { useNavigate } from "react-router-dom";
-import { contextoApp } from "../context/Contexto";
 import { convertirAMayuscula, soloInicial } from "../utils/CadenasTxt";
 import "./NavUser.css";
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { Rutas } from "../enum/Rutas";
+import { cargarEstado, guardarEstado } from "../utils/Almacenamiento";
 
 const NavUser = () => {
   const [isMenuVisible, setMenuVisible] = useState(false);
 
-  const { state, dispatch } = useContext(contextoApp);
-
   const navigate = useNavigate();
-  const { usuario } = state;
+  const usuario = cargarEstado("usuario", null)      
+
   const toggleMenu = () => {
     setMenuVisible(!isMenuVisible);
   };
 
   const cerrarSession = () => {
-    dispatch({ type: "ESTABLECER_USUARIO", payload: null });
+    guardarEstado("usuario", null)
     navigate(Rutas.Login);
   };
 

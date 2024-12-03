@@ -10,7 +10,6 @@ export type EstadoApp = {
   productosCarrito: ProductoCarrito[];
   erorApp: String | null;
   categoria: string;
-  usuario: UsuarioApi | null;
 };
 
 export const estadoInicial: EstadoApp = {
@@ -21,7 +20,6 @@ export const estadoInicial: EstadoApp = {
   productosCarrito: [],
   erorApp: null,
   categoria: "all",
-  usuario: null,
 };
 
 export type Accion =
@@ -34,7 +32,6 @@ export type Accion =
   | { type: "ACTUALIZAR_CANTIDAD"; payload: { id: number; cantidad: number } }
   | { type: "VACIAR_CARRITO" }
   | { type: "ESTABLECER_ERROR_APP"; payload: String | null }
-  | { type: "ESTABLECER_USUARIO"; payload: UsuarioApi | null }
   | { type: "ESTABLECER_CATEGORIA"; payload: string };
 
 export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
@@ -101,8 +98,7 @@ export const reducer = (state: EstadoApp, action: Accion): EstadoApp => {
       };
     case "ESTABLECER_ERROR_APP":
       return { ...state, erorApp: action.payload };
-    case "ESTABLECER_USUARIO":
-      return { ...state, usuario: action.payload };
+ 
     case "ESTABLECER_CATEGORIA":
       return { ...state, categoria: action.payload };
     default:
