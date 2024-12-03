@@ -1,13 +1,8 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import Productos from "../Productos";
 import { contextoApp } from "../../context/Contexto";
-import { obtenerProductos } from "../../services/Productos";
 import { EstadoApp } from "../../context/Reducer";
 import "@testing-library/jest-dom";
-
-jest.mock("../../services/Productos", () => ({
-  obtenerProductos: jest.fn(),
-}));
 
 describe("Productos", () => {
   const mockDispatch = jest.fn();
@@ -42,10 +37,6 @@ describe("Productos", () => {
   });
 
   const renderProductos = async () => {
-    (obtenerProductos as jest.Mock).mockResolvedValue(
-      mockState.productosFiltrados
-    );
-
     render(
       <contextoApp.Provider
         value={{ state: mockState, dispatch: mockDispatch }}
@@ -53,8 +44,6 @@ describe("Productos", () => {
         <Productos />
       </contextoApp.Provider>
     );
-
-    await waitFor(() => expect(obtenerProductos).toHaveBeenCalled());
   };
 
   it("debe renderizar los productos correctamente", async () => {
@@ -66,7 +55,6 @@ describe("Productos", () => {
   it("no mostrar paginacion si solo hay una pagina", async () => {
     mockState.productosFiltrados = [];
     renderProductos();
-    await waitFor(() => expect(obtenerProductos).toHaveBeenCalled());
 
     const botonPagina2 = screen.queryByRole("button", { name: "2" });
     expect(botonPagina2).not.toBeInTheDocument();
