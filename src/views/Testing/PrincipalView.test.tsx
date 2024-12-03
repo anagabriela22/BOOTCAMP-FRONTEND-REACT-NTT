@@ -36,7 +36,6 @@ jest.mock("../../services/Productos", () => ({
 
 const mockState: EstadoApp = {
   categoria: "",
-  usuario: null,
   productos: [],
   productosFiltrados: [
     {

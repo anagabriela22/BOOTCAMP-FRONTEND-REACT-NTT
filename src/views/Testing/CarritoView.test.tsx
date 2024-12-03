@@ -9,7 +9,6 @@ import { useDistritos } from "../../hooks/useDistritos";
 
 const mockState: EstadoApp = {
   categoria: "",
-  usuario: null,
   productos: [],
   productosFiltrados: [
     {

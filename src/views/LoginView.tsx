@@ -1,24 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { login } from "../services/Auth";
 import Swal from "sweetalert2";
-import { contextoApp } from "../context/Contexto";
 import { useNavigate } from "react-router-dom";
 import { Rutas } from "../enum/Rutas";
-import { cargarEstado, guardarEstado } from "../utils/Almacenamiento";
+import { useAuth } from "../context/AuthContexto";
 
 const mensajeRecuperacion = "Se envió la información al correo ingresado.";
 const LoginView = () => {
-  const navigate = useNavigate();
-  const usuarioLogin = cargarEstado("usuario", null)
+  const { setUsuarioAuth } = useAuth();
 
-  
-  useEffect(() => {
-    if (usuarioLogin) {
-      console.log({ usuarioLogin });
-      navigate(Rutas.Principal);
-    }
-  }, [usuarioLogin, navigate]); 
+  const navigate = useNavigate();
 
   const [showResetModal, setShowResetModal] = useState(false);
 
@@ -59,8 +51,7 @@ const LoginView = () => {
     }
 
     if (respuesta.datos?.accessToken != null) {
-
-      guardarEstado("usuario", respuesta.datos)      
+      setUsuarioAuth(respuesta.datos);
 
       navigate(Rutas.Principal);
     }

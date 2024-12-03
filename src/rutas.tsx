@@ -3,11 +3,10 @@ import PrincipalView from "./views/PrincipalView";
 import CarritoView from "./views/CarritoView";
 import LoginView from "./views/LoginView";
 import withAuth from "./hoc/withAuth";
-import {cargarEstado} from "./utils/Almacenamiento";
-const Rutas = () => {
-  const usuario = cargarEstado("usuario", null)      
+import { useAuth } from "./context/AuthContexto";
 
-  const inicioSesion = usuario ? true : false;
+const Rutas = () => {
+  const { usuarioAuth } = useAuth();
 
   const PrincipalProtegida = withAuth(PrincipalView);
   const ResumenProtegida = withAuth(CarritoView);
@@ -19,11 +18,11 @@ const Rutas = () => {
         <Route path="/login" element={<LoginView />}></Route>
         <Route
           path="/principal"
-          element={<PrincipalProtegida inicioSesion={inicioSesion} />}
+          element={<PrincipalProtegida inicioSesion={!!usuarioAuth} />}
         ></Route>
         <Route
           path="/resumen"
-          element={<ResumenProtegida inicioSesion={inicioSesion} />}
+          element={<ResumenProtegida inicioSesion={!!usuarioAuth} />}
         ></Route>
       </Routes>
     </BrowserRouter>

@@ -24,7 +24,6 @@ const mockDistritos = [
 
 const mockState: EstadoApp = {
   categoria: "",
-  usuario: null,
   productos: [],
   productosFiltrados: [
     {
