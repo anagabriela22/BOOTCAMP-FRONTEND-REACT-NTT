@@ -41,8 +41,6 @@ const LoginView = () => {
   const onLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(usuario);
-
     const respuesta = await login(usuario);
 
     if (!respuesta.estado) {

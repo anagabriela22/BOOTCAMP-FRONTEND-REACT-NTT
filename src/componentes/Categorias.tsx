@@ -15,7 +15,6 @@ const Categorias = () => {
       type: "ESTABLECER_CATEGORIA",
       payload: categoriaSeleccionada,
     });
-    console.log(categoriaSeleccionada, categoria);
 
     if (categoriaSeleccionada == categoriaTodos) {
       dispatch({

@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import LoginView from "../LoginView";
 import { contextoApp } from "../../context/Contexto";
 import { BrowserRouter } from "react-router-dom";

@@ -8,8 +8,6 @@ interface WithAuthProps {
 
 const withAuth = <P extends object>(Component: React.ComponentType<P>) => {
   return ({ inicioSesion, ...props }: WithAuthProps & P) => {
-    console.log({ inicioSesion });
-
     if (!inicioSesion) {
       return <Navigate to={Rutas.Login} replace />;
     }

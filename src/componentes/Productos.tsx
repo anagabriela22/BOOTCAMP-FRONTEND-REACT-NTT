@@ -8,13 +8,9 @@ const primeraPagina = 1;
 const elementosPorPagina = 10;
 
 const Productos = () => {
-  console.log("PRODUCTOS");
-  
   const { state } = useContext(contextoApp);
 
   const { productosFiltrados, modoFiltro } = state;
-  console.log({modoFiltro});
-  
 
   const [paginaActual, setPaginaActual] = useState<number>(primeraPagina);
 
@@ -56,17 +52,14 @@ const Productos = () => {
           ))}
         </div>
 
-          {!modoFiltro && (
-            
-                    <Paginacion
-                      totalElementos={productosFiltrados.length}
-                      elementosPorPagina={elementosPorPagina}
-                      paginaActual={paginaActual}
-                      onPageChange={setPaginaActual}
-                    />
-
-
-          )}
+        {!modoFiltro && (
+          <Paginacion
+            totalElementos={productosFiltrados.length}
+            elementosPorPagina={elementosPorPagina}
+            paginaActual={paginaActual}
+            onPageChange={setPaginaActual}
+          />
+        )}
       </div>
     </div>
   );

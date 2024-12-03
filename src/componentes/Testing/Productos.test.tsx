@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Productos from "../Productos";
 import { contextoApp } from "../../context/Contexto";
 import { EstadoApp } from "../../context/Reducer";
