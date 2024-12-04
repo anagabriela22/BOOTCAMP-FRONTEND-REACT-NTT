@@ -1,3 +1,4 @@
+// no hay test
 import React, { createContext, useContext, useState } from "react";
 import { UsuarioApi } from "../models/UsuarioApi.type";
 import { cargarEstado, guardarEstado } from "../utils/Almacenamiento";
@@ -19,6 +20,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 
   const setUsuarioAuth = (usuario: UsuarioApi | null) => {
+    // no usar string
     guardarEstado("usuario", usuario); // Guardar el usuario en localStorage
     setUsuarioAuthState(usuario); // Actualizar el estado
   };

@@ -1,3 +1,4 @@
+// no hay test
 export function disenoResponsivo(): void {
   const buscador = document.getElementById("buscador");
   const contenedorMobil = document.getElementById("buscador-mobil-contenedor");

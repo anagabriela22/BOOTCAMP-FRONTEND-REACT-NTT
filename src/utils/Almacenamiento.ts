@@ -1,3 +1,4 @@
+// no hay test
 export const cargarEstado = (clave: string, estadoPorDefecto: any) => {
   const estadoGuardado = localStorage.getItem(clave);
   return estadoGuardado ? JSON.parse(estadoGuardado) : estadoPorDefecto;

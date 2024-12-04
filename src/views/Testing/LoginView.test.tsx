@@ -1,3 +1,4 @@
+// falta testear varios casos
 import { render, screen, fireEvent } from "@testing-library/react";
 import LoginView from "../LoginView";
 import { contextoApp } from "../../context/Contexto";
@@ -22,6 +23,7 @@ const mockState: EstadoApp = {
 };
 
 const mockDispatch = jest.fn();
+// esto puede estar en otro archivo llamado user-auth.mock.ts para que sea m'as f'acil de leer el test
 const mockUsuarioAuth: UsuarioApi = {
   accessToken:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3MzMxOTU0NzMsImV4cCI6MTczMzE5OTA3M30.GUOh1_VQHhMgWLxM3sHjWzLsxqxnGV79ZGkxlPyKmFo",

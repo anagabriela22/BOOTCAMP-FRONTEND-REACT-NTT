@@ -16,6 +16,7 @@ const NavUser = () => {
   };
 
   const cerrarSession = () => {
+    // no est'a mal pero quiz'as conviene usar un .remove que actualizar a null el storage para evitar dejar alg'un rastro
     setUsuarioAuth(null);
     navigate(Rutas.Login);
   };

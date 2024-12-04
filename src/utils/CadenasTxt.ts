@@ -1,3 +1,4 @@
+// no hay test
 export const soloInicial = (cadena: string | undefined): string => {
   if (!cadena) return "";
   return cadena.charAt(0).toUpperCase();

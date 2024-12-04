@@ -15,6 +15,7 @@ const LoginView = () => {
   const [showResetModal, setShowResetModal] = useState(false);
 
   const [error, setError] = useState<string | null>(null);
+  // hay que tipar el objeto
   const [usuario, setUsuario] = useState({
     username: "",
     password: "",
@@ -38,6 +39,7 @@ const LoginView = () => {
     });
   };
 
+  // falta testear esta funci'on
   const onLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -55,9 +57,11 @@ const LoginView = () => {
     }
   };
 
+  // falta testear
   const recuperarContrasena = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // esto puede estar en un util
     Swal.fire({
       title: "¡Éxito!",
       text: mensajeRecuperacion,

@@ -1,3 +1,4 @@
+// no hay test
 export function funcionalidadScroll(): void {
   const toTopButton = document.getElementById("ui-to-top");
   if (!toTopButton) {
