@@ -69,8 +69,6 @@ describe("Componente Busqueda", () => {
 
     const input = screen.getByPlaceholderText("Buscar...");
     expect(input).toBeInTheDocument();
-    expect(input).toHaveAttribute("type", "text");
-    expect(input).toHaveClass("seccionNavBarPage__navbar--inputBoton");
   });
 
   it("debería filtrar productos al escribir en la caja de búsqueda", () => {

@@ -67,6 +67,8 @@ describe("CarritoView", () => {
 
     expect(screen.getByText("Mi Carrito")).toBeInTheDocument();
 
+    // b'usquemos elementos visuales no solo atributos ya que finalmente los tests deben estar enfocadas en la interacci'on que hace el usuario.
+    
     //Verifica que la navegacion se renderice
     expect(screen.getByRole("navigation")).toBeInTheDocument();
     //Verifica que los productos del carrito se rendericen

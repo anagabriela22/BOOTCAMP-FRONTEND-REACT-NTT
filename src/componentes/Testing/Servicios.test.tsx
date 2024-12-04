@@ -1,3 +1,4 @@
+// es un componente estatico hacerle expect de cada prop o contenido no aporta ya que no es condicionado, bastar'ia con un snapshot
 import { render, screen } from "@testing-library/react";
 import Servicios from "../Servicios";
 import "@testing-library/jest-dom";

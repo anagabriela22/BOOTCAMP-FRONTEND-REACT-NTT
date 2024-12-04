@@ -1,6 +1,7 @@
 import { renderHook } from "@testing-library/react-hooks";
 import { useDistritos } from "../../hooks/useDistritos";
 
+// si al data es estatica no es necesario hacer un mock del hook
 jest.mock("../../../public/distritos.json", () => [
   { id: "1", nombre: "Distrito 1" },
   { id: "2", nombre: "Distrito 2" },

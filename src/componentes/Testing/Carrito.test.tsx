@@ -61,7 +61,6 @@ describe("Componente Carrito", () => {
 
     const contadorCarrito = screen.getByText("1");
     expect(contadorCarrito).toBeInTheDocument();
-    expect(contadorCarrito).toHaveStyle({ display: "flex" });
   });
 
   it("debería navegar a /resumen al hacer clic en el carrito", () => {
@@ -76,8 +75,9 @@ describe("Componente Carrito", () => {
 
   it("no debería mostrar el contador si el carrito está vacío", () => {
     renderCarrito({ ...mockState, productosCarrito: [] });
-
+    // que hace el regex?
     const contadorCarrito = screen.queryByText(/\d+/);
+    // no se evaluan estilos no tiene ning'un valor agregado
     expect(contadorCarrito).toHaveStyle("display: none");
   });
 });

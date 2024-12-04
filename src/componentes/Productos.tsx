@@ -57,6 +57,7 @@ const Productos = () => {
       elementosPorPagina
     );
   } else {
+    // no est'a testeado
     productosPagina = obtenerProductosPorPagina(
       productosFiltrados,
       primeraPagina,
