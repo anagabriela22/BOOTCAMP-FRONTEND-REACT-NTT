@@ -15,6 +15,7 @@ const Navegacion = ({
 }: NavegacionProps) => {
   const navigate = useNavigate();
 
+  // no est'a testeado
   const irAPrincipal = () => {
     navigate(Rutas.Principal);
   };

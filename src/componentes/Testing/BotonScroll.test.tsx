@@ -1,3 +1,4 @@
+// igual aqu'i es m'as pr'actico usar un snapshopt ya que todos los casos definidos no generan valor al test porque no evaluan comportamiento solo validan que existan propiedades
 import { render } from "@testing-library/react";
 import BotonScroll from "../BotonScroll";
 import "@testing-library/jest-dom";

@@ -53,6 +53,7 @@ describe("Productos", () => {
       </contextoApp.Provider>
     );
 
+    // esta l'inea no aporta en el test
     await waitFor(() => expect(obtenerProductos).toHaveBeenCalled());
   };
 

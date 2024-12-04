@@ -1,9 +1,17 @@
+// Tal vez ser'ia ideal crear una carpeta por cada componente para que el test este al mismo nivel y no separado algo as'i ya que generalmente se usa la carpeta __tests__
+
+// components/Banner/Banner.tsx
+// components/Banner/__tests__/Banner.test.tsx
+
+// al ser un componente con data estatica conviene hacer uso de un snapshot que estar evaluando contenido que siempre ser'a fijo.
+
 import { render, screen } from "@testing-library/react";
 import Banner from "../Banner";
 import "@testing-library/jest-dom";
 
 describe("Componente Banner", () => {
   it("debería renderizarse correctamente", () => {
+    // este test no evalua ningún comportamiento
     render(<Banner />);
   });
 
