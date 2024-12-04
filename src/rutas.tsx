@@ -1,3 +1,4 @@
+// no hay test
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrincipalView from "./views/PrincipalView";
 import CarritoView from "./views/CarritoView";
@@ -14,7 +15,9 @@ const Rutas = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<LoginView />}></Route>
+        
+        {/* tal vez usar un redireccionamiento
+         <Route path="*" element={<Navigate to="/login" replace />} /> */}
         <Route path="/login" element={<LoginView />}></Route>
         <Route
           path="/principal"

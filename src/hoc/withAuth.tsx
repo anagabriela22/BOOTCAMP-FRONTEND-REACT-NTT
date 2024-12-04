@@ -1,3 +1,4 @@
+// bien, pero no tiene test
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { Rutas } from "../enum/Rutas";

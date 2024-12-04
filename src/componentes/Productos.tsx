@@ -12,6 +12,7 @@ const Productos = () => {
 
   const { productosFiltrados, modoFiltro } = state;
 
+  // se pidi'o un custom hook para el paginado
   const [paginaActual, setPaginaActual] = useState<number>(primeraPagina);
 
   const obtenerProductosPorPagina = (
